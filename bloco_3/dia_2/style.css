@@ -1,0 +1,40 @@
+body{
+    font-size: 16px;
+}
+h1 {
+    font-size:65px; 
+    color: orange; 
+    font-family: sans-serif;
+}
+ul {
+    background-color: teal;
+    font-style: italic;
+    line-height: 1.7;
+}
+ol {
+    background-color: teal;
+    text-align: justify;
+    line-height: 1.5;
+}
+p {
+    font-weight: 600;
+    font-size: 3em;
+    text-align: center;
+    color: darkgreen; 
+    line-height: 3;
+}
+li {
+    font-family: monospace;
+}
+.mudar-cor{
+    background-color: olive;
+}
+#yellow {
+    background-color: yellow;
+}
+#red {
+    background-color: red;
+}
+#brown {
+    background-color: brown;
+}
