@@ -1,2 +1,2 @@
 # Exercícios Trybe 
-## Diretório dedicado ao aprendizado e resolução dos exercícios propostos por @betrybe
+## Repositório dedicado ao aprendizado e resolução dos exercícios propostos por @betrybe
