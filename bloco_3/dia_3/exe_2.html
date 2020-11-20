@@ -13,11 +13,16 @@
                 position: absolute;
                 top: 5px;
                 left: 5px;
+                z-index: 3;
             }
             #creature {
                 position:absolute;
                 top: 70px;
                 left: 105px;
+                z-index: 2;
+            }
+            #planet {
+                z-index: 1;
             }
         </style>
     </head>
@@ -30,7 +35,17 @@
         </div>
         
         <img id="creature" src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png">
-        
+    </div>
+    <div style="width: 1000px; margin-top: 50px; text-align: justify; position: relative; left: -20px;">
+        <ol>
+            <li>Posicione a criatura
+                Essa página web contém uma imagem de um planeta, uma imagem de uma criatura, e uma div com uma saudação. Seu trabalho é fazer com que a criatura pareça estar sentada no planeta e dizendo a saudação. Nessa primeira etapa, use posicionamento absoluto para colocar a criatura em algum lugar em cima do planeta.</li>
+            <li>Posicione a saudação
+                Nessa segunda etapa, também posicione a saudação em cima do planeta.</li>
+            <li>Ordene-os
+                Agora, use uma propriedade z-index para garantir que a saudação sempre apareça em cima da criatura, e não atrás..</li>
+        </ol>
+    </div>
 
     </body>
 </html>
