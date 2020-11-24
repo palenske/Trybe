@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <style>
-        body{
-            background-color: turquoise;
-        }
         *{
             margin: 0px;
             padding: 0px;
+        }
+        body{
+            background-color: turquoise;
         }
         #header{
             background-color: blue;
@@ -31,30 +31,56 @@
         }
         #main{
             background-color: purple;
-            width: fit-content;
-            margin: 10px;
+            width: 1300px;
+            margin: 10px auto 0px 10px;
             padding: 10px;
         }
-        #section{
-            background-color: grey;
+        #article{
+            display: inline-block;
+            background-color: pink;
             margin: 10px;
-            width: 350px;
+            width: 80%;
+        }
+        .section{
+            background-color: white;
+            padding: 25px;
+            margin: 10px;
+            width: 450px;
             float: left;
-
+        }
+        #general{
+            width: fit-content;
+            padding: 10px 0px 5px 10px;
+        }
+        #table{
+            margin: 10px auto 10px auto;
+            width: 70%;
+            background-color: yellow;
+        }
+        #table tr th{
+            border: 2px solid black;
+            width: fit-content;
         }
         #aside{
             background-color: orange;
+            width: fit-content;
             float: right;
             position: relative;
             margin: 10px;
+            padding: 10px;
+        }
+        #piclink{
+            width: 200px;
         }
         footer{
             background-color: red;
         }
-        #article{
-            background-color: pink;
-            margin: 10px;
-            display: inline-block;
+        #reference {
+            width: fit-content;
+            text-align: left;
+        }
+        #reference ol{
+            padding: 5px 5px 5px 20px;
         }
     </style>
   </head>
@@ -72,29 +98,40 @@
     <main id="main">
         <article id="article">
         <h2>Nature’s Most Amazing Eyes Just Got A Bit Weirder</h2>
-            <section id="section">
+            <section class="section" id="general">
                 <h2>Info gerais</h2>
                 <p>Eyes are testaments to evolution’s creativity. They all do the same basic things—detect light, and convert it into electrical signals—but in such a wondrous variety of ways. There are single and compound eyes, bifocal lenses and rocky ones, mirrors and optic fibres. And there are eyes that are so alien, so constantly surprising, that after decades of research, scientists have only just about figured out how they work, let alone why they evolved that way. To find them, you need to go for a swim.</p>
-                <table></table>
+                <table id="table">
+                    <tr>
+                        <th>espécie</th>
+                        <th>familia</th>
+                        <th>tipo</th>
+                    </tr>
+                    <tr>
+                        <th>espécie</th>
+                        <th>familia</th>
+                        <th>tipo</th>
+                    </tr>
+                </table>
             </section>
             <div>
-                <section id="section">
+                <section class="section">
                     <h2>Bonito</h2>
                         <img>
                         <p>This is the eye of a mantis shrimp—an marine animal that’s neither a mantis nor a shrimp, but a close relative of crabs and lobsters. It’s a compound eye, made of thousands of small units that each detects light independently. Those in the midband—the central stripe you can see in the photo—are special. They’re the ones that let the animal see colour.</p>
                     </section>
-                    <section id="section">
+                    <section class="section">
                         <h2>legal</h2>
                         <p>This is the eye of a mantis shrimp—an marine animal that’s neither a mantis nor a shrimp, but a close relative of crabs and lobsters. It’s a compound eye, made of thousands of small units that each detects light independently. Those in the midband—the central stripe you can see in the photo—are special. They’re the ones that let the animal see colour.</p>
                         <img>
                     </section>
-                    <section id="section">
+                    <section class="section">
                         <h2>Brilhoso</h2>
                         <p>This is the eye of a mantis shrimp—an marine animal that’s neither a mantis nor a shrimp, but a close relative of crabs and lobsters. It’s a compound eye, made of thousands of small units that each detects light independently. Those in the midband—the central stripe you can see in the photo—are special. They’re the ones that let the animal see colour.</p>
                         <img>
                     </section>
             </div>
-            <section id="section">
+            <section class="section" id="reference">
                 <h2>referências</h2>
                 <ol>
                     <li>https://www.nationalgeographic.com/science/phenomena/2014/07/03/natures-most-amazing-eyes-just-got-a-bit-weirder/</li>
@@ -104,7 +141,7 @@
             </section>
             </article>
         <aside id="aside">
-            <a href="https://www.youtube.com/watch?v=E0Li1k5hGBE" target="blank"<h2>video</h2></a>
+            <a href="https://www.youtube.com/watch?v=E0Li1k5hGBE" target="blank"><h2>Vídeo</h2><img id="piclink" src="https://www.nationalgeographic.com/content/dam/science/phenomena/not-exactly-rocket-science/rights-exempt/files/2014/07/Mantis-Shrimp-eye.adapt.676.1.jpg">  </a>
         </aside>
     </main>
     
