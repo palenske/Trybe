@@ -7,69 +7,107 @@
         body{
             background-color: turquoise;
         }
-        header{
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #header{
             background-color: blue;
+            width: fit-content;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
         }
-        nav{
+        #nav{
             background-color: green;
+            width: fit-content;
+            margin: 10px;
+            padding: 5px;
         }
-        article{
+        #nav ul{
+        }
+        #nav li{
+            display: inline;
+        }
+        #main{
             background-color: purple;
+            width: fit-content;
+            margin: 10px;
+            padding: 10px;
         }
-        section{
+        #section{
             background-color: grey;
+            margin: 10px;
+            width: 350px;
+            float: left;
+
         }
-        aside{
+        #aside{
             background-color: orange;
+            float: right;
+            position: relative;
+            margin: 10px;
         }
         footer{
             background-color: red;
         }
+        #article{
+            background-color: pink;
+            margin: 10px;
+            display: inline-block;
+        }
     </style>
   </head>
   <body>
-    <header>
+    <header id="header">
         <h1>CAMARÃO PAVÃO</h1>
     </header>
-
-    <nav>
+    <nav id="nav">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Principal</li>
+            <li>Referencia</li>
+            <li>Contato</li>
         </ul>
     </nav>
-
-    <article>
-        <h2>Principal</h2>
-        <section>
-            <h2>Info gerais</h2>
-            <table></table>
-        </section>
-        <section>
-            <h2>Fato 1</h2>
-            <img>
-        </section>
-        <section>
-            <h2>Fato 2</h2>
-            <img>
-        </section>
-        <section>
-            <h2>Fato 3</h2>
-            <img>
-        </section>
-        <section>
-            <h2>referências</h2>
-            <ol>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
-        </section>
-    </article>
-    <aside>
-        <a href="https://www.youtube.com/watch?v=E0Li1k5hGBE" target="blank"<h2>video</h2></a>
-    </aside>
+    <main id="main">
+        <article id="article">
+        <h2>Nature’s Most Amazing Eyes Just Got A Bit Weirder</h2>
+            <section id="section">
+                <h2>Info gerais</h2>
+                <p>Eyes are testaments to evolution’s creativity. They all do the same basic things—detect light, and convert it into electrical signals—but in such a wondrous variety of ways. There are single and compound eyes, bifocal lenses and rocky ones, mirrors and optic fibres. And there are eyes that are so alien, so constantly surprising, that after decades of research, scientists have only just about figured out how they work, let alone why they evolved that way. To find them, you need to go for a swim.</p>
+                <table></table>
+            </section>
+            <div>
+                <section id="section">
+                    <h2>Bonito</h2>
+                        <img>
+                        <p>This is the eye of a mantis shrimp—an marine animal that’s neither a mantis nor a shrimp, but a close relative of crabs and lobsters. It’s a compound eye, made of thousands of small units that each detects light independently. Those in the midband—the central stripe you can see in the photo—are special. They’re the ones that let the animal see colour.</p>
+                    </section>
+                    <section id="section">
+                        <h2>legal</h2>
+                        <p>This is the eye of a mantis shrimp—an marine animal that’s neither a mantis nor a shrimp, but a close relative of crabs and lobsters. It’s a compound eye, made of thousands of small units that each detects light independently. Those in the midband—the central stripe you can see in the photo—are special. They’re the ones that let the animal see colour.</p>
+                        <img>
+                    </section>
+                    <section id="section">
+                        <h2>Brilhoso</h2>
+                        <p>This is the eye of a mantis shrimp—an marine animal that’s neither a mantis nor a shrimp, but a close relative of crabs and lobsters. It’s a compound eye, made of thousands of small units that each detects light independently. Those in the midband—the central stripe you can see in the photo—are special. They’re the ones that let the animal see colour.</p>
+                        <img>
+                    </section>
+            </div>
+            <section id="section">
+                <h2>referências</h2>
+                <ol>
+                    <li>https://www.nationalgeographic.com/science/phenomena/2014/07/03/natures-most-amazing-eyes-just-got-a-bit-weirder/</li>
+                    <li>https://theoatmeal.com/comics/mantis_shrimp</li>
+                    <li>https://app.betrybe.com/course/fundamentals/html-css/semantic-html</li>
+                </ol>
+            </section>
+            </article>
+        <aside id="aside">
+            <a href="https://www.youtube.com/watch?v=E0Li1k5hGBE" target="blank"<h2>video</h2></a>
+        </aside>
+    </main>
+    
     <footer>
         <h3>Copilador e editado por...</h3>
     </footer>
