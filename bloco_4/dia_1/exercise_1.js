@@ -19,7 +19,7 @@ if (a == b){
 console.log('--------------------');
 console.log('\n');
 console.log('-----PROGRAMA_3-----');
-a = 2, b = 1; 
+a = 0, b = 6; 
 let c = 10;
 if (a == b || a == c || b == c){
     console.log('possui números iguais\nA, B, C =', a, b, c);
@@ -33,3 +33,27 @@ if (a == b || a == c || b == c){
 console.log('--------------------');
 console.log('\n');
 console.log('-----PROGRAMA_4-----');
+if (a > 0){
+    console.log('positive\n',a);
+} else if (a < 0){
+    console.log('negative\n',a);
+} else {
+    console.log('zero\n',a);
+}
+console.log('--------------------');
+console.log('\n');
+console.log('-----PROGRAMA_5-----');
+a = 80, b = 50, c = 50;
+console.log('Ângulo A:', a);
+console.log('Ângulo B:', b);
+console.log('Ângulo C:', c);
+if (a+b+c == 180){
+    Boolean = true;
+} else {
+    Boolean = false;
+}
+console.log(Boolean);
+
+console.log('--------------------');
+console.log('\n');
+console.log('-----PROGRAMA_6-----');
