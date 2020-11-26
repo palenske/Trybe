@@ -48,8 +48,10 @@ console.log('Ângulo A:', a);
 console.log('Ângulo B:', b);
 console.log('Ângulo C:', c);
 if (a+b+c == 180){
+    console.log('\nTriangulo?');
     Boolean = true;
 } else {
+    console.log('\nTriangulo?');
     Boolean = false;
 }
 console.log(Boolean);
@@ -57,3 +59,27 @@ console.log(Boolean);
 console.log('--------------------');
 console.log('\n');
 console.log('-----PROGRAMA_6-----');
+let piece = 'KinG';
+piece = piece.toLocaleLowerCase();
+switch (piece){
+    case 'pawn':
+        console.log(piece, 'move -> vertically forward. One square');
+        break;
+    case 'king':
+        console.log(piece, 'move -> diagonally, horizontally, or vertically. One squares');
+        break;
+    case 'queen':
+        console.log(piece, 'move -> diagonally, horizontally, or vertically. Any number of squares');
+        break;
+    case 'rook':
+        console.log(piece, 'move -> horizontally or vertically. Any number of squares');
+        break;
+    case 'bishop':
+        console.log(piece, 'move -> diagonals. Any number of squares');
+        break;
+    case 'knight':
+        console.log(piece, 'move -> "L" shape');
+        break;
+    default:
+        console.log('Invalid piece name');
+}
