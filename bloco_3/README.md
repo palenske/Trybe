@@ -1,5 +1,5 @@
 # Estruturação e Estilização de páginas WEB
-# HTML & CSS
+## HTML & CSS
 
 ## Exercícios resolvidos para a fixação de conteúdo acerca de HTML e CSS (introdução)
 
