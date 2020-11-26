@@ -1,4 +1,4 @@
-# JavaScrip
+# JavaScript
 ## Mão na massa!
 
 Exercícios para fixação de conteúdo:
