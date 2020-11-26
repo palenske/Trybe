@@ -83,3 +83,26 @@ switch (piece){
     default:
         console.log('Invalid piece name');
 }
+console.log('--------------------');
+console.log('\n');
+console.log('-----PROGRAMA_7-----');
+a = 89;
+if (a < 0 || a > 100){
+    console.log('Nota inválida');
+}
+else if (a >= 90){
+    console.log(a, '= A');
+} else if (a >= 80){
+    console.log(a, '= B');
+} else if (a >= 70){
+    console.log(a, '= C');
+} else if (a >= 60){
+    console.log(a, '= D');
+} else if (a >= 50){
+    console.log(a, '= E');
+} else if (a < 50){
+    console.log(a, '= F');
+} 
+console.log('--------------------');
+console.log('\n');
+console.log('-----PROGRAMA_8-----');
