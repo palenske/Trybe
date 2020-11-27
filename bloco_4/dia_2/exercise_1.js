@@ -57,10 +57,66 @@ let newArray = [];
 for (index = 1; index <= 25; index += 1){
     newArray.push(index);
 }
-for (index = 0; index < newArray.length; index += 1){
-    console.log(newArray[index]);
-}
+console.log(newArray);
 console.log('\n#9 - Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2.\n');
 for (index = 0; index < newArray.length; index += 1){
     console.log(newArray[index] + '/2 = ' + (newArray[index]/2));
 }
+
+console.log('\n#---BONUS TRACK-1-# - Ordene o array numbers em ordem crescente e imprima seus valores\n');
+for(i=0; i < numbers.length; i +=1){
+    let aux=0;
+    for (index = 0; index < numbers.length; index += 1){
+        if (numbers[index] > numbers[index+1]){
+            aux = numbers[index];
+            numbers[index] = numbers[index+1];
+            numbers[index+1] = aux;
+        }
+    }
+    for (index = numbers.length-1; index >= 0; index -= 1){
+        if (numbers[index] < numbers[index-1]){
+            aux = numbers[index];
+            numbers[index] = numbers[index-1];
+            numbers[index-1] = aux;
+        }
+    }
+    if (aux == 0){
+        i =numbers.length+1;
+    }
+}
+console.log(numbers);
+
+console.log('\n#---BONUS TRACK-2-# - Ordene o array numbers em ordem decrescente e imprima seus valores\n');
+for(i=0; i < numbers.length; i +=1){
+    let aux=0;
+    for (index = 0; index < numbers.length; index += 1){
+        if (numbers[index] < numbers[index+1]){
+            aux = numbers[index];
+            numbers[index] = numbers[index+1];
+            numbers[index+1] = aux;
+        }
+    }
+    for (index = numbers.length-1; index >= 0; index -= 1){
+        if (numbers[index] > numbers[index-1]){
+            aux = numbers[index];
+            numbers[index] = numbers[index-1];
+            numbers[index-1] = aux;
+        }
+    }
+    if (aux == 0){
+        i = numbers.length+1;
+    }
+}
+console.log(numbers);
+
+console.log('\n#---BONUS TRACK-3-# - Agora você irá criar um novo array a partir do array numbers , sem perdê-lo. Cada valor do novo array deverá ser igual ao valor correspondente no array numbers multiplicado pelo seguinte\n');
+numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]; //array original//
+let arrayBonus = [];
+for (i = 0; i < numbers.length; i += 1){
+    if (i == (numbers.length-1)){
+        arrayBonus.push(numbers[i]*2);
+    } else {
+        arrayBonus.push(numbers[i]*numbers[i+1]);
+    }
+}
+console.log(arrayBonus);
