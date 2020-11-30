@@ -16,6 +16,6 @@ console.log('A jogadora Marta Silva foi eleita a melhor do mundo por ' + player[
 
 console.log('A jogadora possui ' + player.medals.golden + ' medalhas de ouro e ' + player.medals.silver + ' medalhas de prata\n')
 
-for (let key in player) {
-    console.log(key, '=', player[key]);
+for (let coisas in player) {
+    console.log(player[coisas]);
 }
