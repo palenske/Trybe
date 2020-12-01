@@ -10,12 +10,12 @@ console.log('\n');
 info['recorrente'] = 'Sim';
 //3
 for (let key in info){
-    console.log(info[key]);
+    console.log(key);
 }
 console.log('\n');
 //4
 for (let key in info){
-console.log(key);
+console.log(info[key]);
 }
 console.log('\n');
 //5
@@ -28,7 +28,7 @@ let info2 = {
 
 function imprime(a, b){
     for (let key in a, b){
-        if (info[key] === b[key]){
+        if (a.key === b.key && key === 'recorrente'){
             console.log('Ambos recorrentes');
         } else {
             console.log(a[key], ' e ', b[key]);

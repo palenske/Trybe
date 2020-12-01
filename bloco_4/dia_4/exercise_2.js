@@ -31,3 +31,31 @@ function maiorId(numbers){
 }
 console.log(maiorId([2, 3, 6, 7, 10, 1]));
 
+console.log ('\n# 3 - Crie uma função que receba um array de inteiros e retorne o índice do menor valor.');
+function menorId(numbers){
+    let menor = 0, id = 0;
+    for (index = 0; index < numbers.length; index += 1){
+        if (numbers[index] <= numbers[(numbers.length-1)-index] && numbers[index] <= menor){
+            menor = numbers[index];
+            id = index;
+        }
+    }
+    return id;
+}
+console.log(menorId([2, 4, 6, 7, 10, 0, -3]));
+
+console.log ('\n# 4 - Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.');
+
+function maiorArray(arrayNomes){
+    let name = '', name2 = '', maiorA = '';
+    for(index = 0; index < arrayNomes.length; index += 1){
+        name = arrayNomes[index];
+        name2 = arraysNomes[(arrayNomes.length-1) - index];
+        if(name.length >= name2.length){
+            maiorA = arrayNomes[index];
+        }
+    }
+    return maiorA;
+}
+
+console.log(maiorArray(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
