@@ -50,8 +50,8 @@ function maiorArray(arrayNomes){
     let name = '', name2 = '', maiorA = '';
     for(index = 0; index < arrayNomes.length; index += 1){
         name = arrayNomes[index];
-        name2 = arraysNomes[(arrayNomes.length-1) - index];
-        if(name.length >= name2.length){
+        name2 = arrayNomes[(arrayNomes.length-1)-index];
+        if(name.length >= name2.length && name.length >= maiorA.length){
             maiorA = arrayNomes[index];
         }
     }
