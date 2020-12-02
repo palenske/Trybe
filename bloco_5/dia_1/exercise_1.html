@@ -58,21 +58,28 @@
         }
         //#2
         function changeSquareColor() {
-            document.getElementsByClassName('main-content')[0].style.backgroundColor = 'rgb(76 , 164 , 109)';
+          document.getElementsByClassName('main-content')[0].style.backgroundColor = 'rgb(76 , 164 , 109)';
         }
         //#3
         function changeRedBox() {
-            document.getElementsByClassName('center-content')[0].style.backgroundColor = 'white';
+          document.getElementsByClassName('center-content')[0].style.backgroundColor = 'white';
         }
         //#4
         function textCorrection() {
-            document.getElementsByTagName('h1')[0].innerText = 'Exercício 5.1 - JavaScript';
+          document.getElementsByTagName('h1')[0].innerText = 'Exercício 5.1 - JavaScript';
         }
-
+        //#5
+        function moveToUp() {
+          for (let index = 0; index < document.getElementsByTagName('p').length; index += 1 ){
+            document.getElementsByTagName('p')[index].innerText = document.getElementsByTagName('p')[index].innerText.toUpperCase();
+          }
+        }
         changeText();
         changeSquareColor();
         changeRedBox();
         textCorrection();
+        moveToUp();
+
     </script>
   </body>
 </html>
