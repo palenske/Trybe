@@ -58,6 +58,36 @@
   <body>
     <script>
       // COLOQUE SEU CÓDIGO AQUI
+      // #1
+      let title = document.createElement('h1');
+      title.innerText = 'Exercício 5.2 - JavaScript DOM';
+      document.body.appendChild(title);
+      //
+      // #2
+      let mainBox = document.createElement('div');
+      mainBox.className = 'main-content';
+      document.body.appendChild(mainBox);
+      //
+      // #3
+      let centerBox = document.createElement('div');
+      centerBox.className = 'center-content';
+      document.body.querySelector('div').appendChild(centerBox);
+      //
+      // #4
+      let textInDiv = document.createElement('p');
+      textInDiv.innerText = 'algum texto...';
+      document.body.querySelector('div .center-content').appendChild(textInDiv);
+      //
+      // #5
+      let leftContentDiv = document.createElement('div');
+      leftContentDiv.className = 'left-content';
+      document.body.querySelector('div').appendChild(leftContentDiv);
+      //
+      // #6
+      let rightContentDiv = document.createElement('div');
+      rightContentDiv.className = 'right-content';
+      document.body.querySelector('div').appendChild(rightContentDiv);
+      //
     </script>
   </body>
 </html>
