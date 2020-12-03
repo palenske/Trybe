@@ -88,6 +88,12 @@
       rightContentDiv.className = 'right-content';
       document.body.querySelector('div').appendChild(rightContentDiv);
       //
+      // #7
+      let putImg = document.createElement('img');
+      putImg.classList = 'small-image';
+      putImg.src = 'https://picsum.photos/200';
+      document.body.querySelector('div .left-content').appendChild(putImg);
+      //
     </script>
   </body>
 </html>
