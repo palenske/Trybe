@@ -110,7 +110,34 @@
         document.body.querySelector('div').appendChild(hThree[index]);
       }
       //
-      
-    </script>
+
+      // #1
+      document.querySelector('h1').className = 'title';
+      //
+      // #2
+      for (let index = 0; index < 3; index += 1){
+        document.body.querySelectorAll('h3')[index].className = 'description';
+      }
+      //
+      // #3
+      let dadDiv = document.body.querySelector('div');
+      let boxOff = document.body.querySelector('div .left-content');
+      let removedBox = dadDiv.removeChild(boxOff);
+      //
+      // #4
+      let centerRightBox = document.body.querySelector('div .right-content');
+      centerRightBox.style.margin = 'auto';
+      //
+      // #5
+      let dadOf = document.body.querySelector('div .center-content').parentNode;
+      dadOf.style.backgroundColor = 'green';
+      //
+      // #6
+      for (let index = 0; index < 2; index += 1){
+        let removeLasts = document.body.querySelector('ul');
+        removeLasts = removeLasts.lastChild.remove();
+      }
+      //
+      </script>
   </body>
 </html>
