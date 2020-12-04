@@ -94,6 +94,15 @@
       putImg.src = 'https://picsum.photos/200';
       document.body.querySelector('div .left-content').appendChild(putImg);
       //
+      // #8
+      let putList = document.createElement('ul');
+      document.body.querySelector('div .right-content').appendChild(putList);
+      for (let index = 1; index <= 10; index += 1){
+        let itemList = document.createElement('li');
+        itemList.innerText = index;
+        document.body.querySelector('div ul').appendChild(itemList);
+      }
+      //
     </script>
   </body>
 </html>
