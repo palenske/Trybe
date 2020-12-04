@@ -88,6 +88,29 @@
       rightContentDiv.className = 'right-content';
       document.body.querySelector('div').appendChild(rightContentDiv);
       //
+      // #7
+      let putImg = document.createElement('img');
+      putImg.classList = 'small-image';
+      putImg.src = 'https://picsum.photos/200';
+      document.body.querySelector('div .left-content').appendChild(putImg);
+      //
+      // #8
+      let putList = document.createElement('ul');
+      document.body.querySelector('div .right-content').appendChild(putList);
+      for (let index = 1; index <= 10; index += 1){
+        let itemList = document.createElement('li');
+        itemList.innerText = index;
+        document.body.querySelector('div ul').appendChild(itemList);
+      }
+      //
+      // #9
+      let hThree = [];
+      for (let index = 0; index < 3; index += 1){
+        hThree[index] = document.createElement('h3');
+        document.body.querySelector('div').appendChild(hThree[index]);
+      }
+      //
+      
     </script>
   </body>
 </html>
