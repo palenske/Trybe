@@ -9,3 +9,9 @@
 - <b>GitHub</b>;
 - Subir repositório local para o GitHub;
 - Branch , Merge , Commit.
+
+### Com isso, serei capaz de
+- Instalar e configurar o Git no computador;
+- Salvar projetos no repositório Git local;
+- Controlar as alterações e versões dos arquivos;
+- Enviar projetos para o repositório remoto do GitHub .
