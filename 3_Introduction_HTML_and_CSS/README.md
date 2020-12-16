@@ -1,7 +1,7 @@
 # Estruturação e Estilização de páginas WEB
 ## HTML & CSS
 
-## Exercícios resolvidos para a fixação de conteúdo acerca de HTML e CSS (introdução)
+## Aprendido: como estruturar páginas HTML estilizadas com o CSS de uma forma muito prática e criando vários projetos.
 
 - Estrutura de um site em Html
 - Conhecendo as partes do código: <head> <boddy> <tags>
