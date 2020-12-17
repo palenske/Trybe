@@ -23,7 +23,7 @@
 ### parte.3
 - [x] Coloque todo o CSS criado até agora nos exercícios anteriores em um arquivo externo.
 
-## Estilizando seu [Portfólio](https://palenske.github.io/portfolio/) Web!
+## Estilizando meu [Portfólio](https://palenske.github.io/portfolio/) Web!
 ### Requisitos
 Seu Portfólio Web deve ser estilizado usando as informações a seguir:
 - [x] Defina fontes diferentes para o seu nome e para a descrição que você criou;
