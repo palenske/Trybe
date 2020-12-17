@@ -4,7 +4,7 @@
 ### Serei capaz de
 - Criar regras de estilo para tags HTML utilizando o CSS;
 - Utilizar seletores de tag , id e class para aplicar regras de CSS;
-- Alterar características da fonte e das cores de páginas web;
+- Alterar características da fonte e das cores de páginas web.
 
 ## Conteúdo e exercícios:
 ## [exercise_1](exercise_1.html)
