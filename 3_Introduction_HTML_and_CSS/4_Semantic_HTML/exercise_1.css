@@ -1,0 +1,110 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+body {
+  background-color: orange;
+}
+
+#header {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: aquamarine;
+}
+
+#nav {
+  width: fit-content;
+  margin: 10px;
+  padding: 5px;
+}
+
+#nav li {
+  display: inline; 
+  font-weight: 600;
+  margin-right: 10px;
+  color: black;
+}
+
+#main {
+  width: 1300px;
+  margin: 10px auto 0px 10px;
+  padding: 10px;
+}
+
+#article {
+  display: inline-block;
+  padding: 5px;
+  width: 770px;
+}
+
+.section {
+  display: inline-block;
+  text-align: justify;
+  vertical-align: top;
+  background-color: white;
+  padding: 20px;
+  margin: 5px;
+  width: 333px;
+}
+
+.noball {
+  list-style: none;
+  display: inline;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+
+.imagem {
+  width: 250px;
+  margin: auto 10%;
+}
+
+#general {
+  width: fit-content;
+  padding: 10px 0px 5px 10px;
+}
+
+#table {
+  margin: 10px auto 10px auto;
+  width: 70%;
+  background-color: peachpuff;
+}
+
+#table tr td {
+  text-align: center;
+  border: 2px solid black;
+  width: fit-content;
+}
+
+#aside {
+  display: inline-block;
+  text-align: center;
+  position: fixed;
+  width: 490px;
+  margin-left: 5px;
+  padding: 10px;
+}
+
+#piclink {
+  width: 300px;
+}
+
+footer{
+  background-color: aquamarine;
+  height: 50px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#reference {
+  width: fit-content;
+  text-align: left;
+}
+
+#reference ol{
+  padding: 5px 5px 5px 20px;
+}
