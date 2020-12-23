@@ -43,3 +43,8 @@ function holidayButton(btnName) {
   fatherBtn.appendChild(btn);
 }
 holidayButton('Feriados');
+
+// exercise 3:
+function showHolidays() {
+  
+}
