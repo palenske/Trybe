@@ -8,7 +8,7 @@
 - Utilizar o HTML para criar listas, links e adicionar imagens;
 
 ## Conteúdo e exercícios:
-## [exercise_1.html](exercise_1.html)
+## [exercise_1](exercise_1.html)
 ### parte.1
 - [x] Crie uma lista das pessoas que você já fez amizade na Trybe;
 - [x] Adicione uma imagem que venha de uma URL externa;
