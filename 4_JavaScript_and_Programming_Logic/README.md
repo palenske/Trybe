@@ -7,4 +7,4 @@
 - [x] Aprender lógica de programação e algoritmos;
 - [x] Aprender a manipular objetos, utilizar for/in e funções;
 
-- [x] Projeto: [<i>Playground Functions</i>](https://github.com/palenske/palenske.github.io/blob/main/playground-functions/src/challenges.js)
+- [x] Projeto: [<i>Playground Functions</i>](https://github.com/palenske/palenske.github.io/blob/main/playground-functions/)
