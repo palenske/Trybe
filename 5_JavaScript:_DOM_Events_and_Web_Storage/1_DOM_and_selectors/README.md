@@ -5,7 +5,7 @@
 - Acessar dados do HTML com o JavaScript através dos seletores do DOM.
 
 ## Conteúdo e exercícios:
-## [exercise_1](exercise_1.html]
+## [exercise_1](exercise_1.html)
 ```
 "Aqui você vai modificar os elementos já existentes utilizando apenas as funções:"
 document.getElementById()
