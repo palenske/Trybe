@@ -10,12 +10,12 @@ console.log('\n');
 info['recorrente'] = 'Sim';
 //3
 for (let key in info){
-    console.log(info[key]);
+    console.log(key);
 }
 console.log('\n');
 //4
 for (let key in info){
-console.log(key);
+console.log(info[key]);
 }
 console.log('\n');
 //5
