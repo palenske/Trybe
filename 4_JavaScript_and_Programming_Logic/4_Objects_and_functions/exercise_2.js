@@ -59,3 +59,24 @@ function maiorArray(arrayNomes){
 }
 
 console.log(maiorArray(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
+
+console.log('\n# 5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.');
+
+function intRepeat(arrayNum) {
+  let repeatControl = 0;
+  let higherNum = 0;
+  for (index = 0; index < arrayNum.length; index += 1) {
+    let numQnt = 0;
+    for (index2 = 0; index2 < arrayNum.length; index2 += 1) {
+      if (arrayNum[index] === arrayNum[index2]) {
+        numQnt += 1;
+      }
+    }
+    if (numQnt > repeatControl) {
+      repeatControl = numQnt;
+      higherNum = arrayNum[index];
+    }
+  }
+  return higherNum;
+}
+console.log(intRepeat([2, 3, 2, 5, 8, 2, 3]));
