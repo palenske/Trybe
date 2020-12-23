@@ -80,3 +80,14 @@ function intRepeat(arrayNum) {
   return higherNum;
 }
 console.log(intRepeat([2, 3, 2, 5, 8, 2, 3]));
+
+console.log('\n# 6 - Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.');
+
+function summation(num) {
+  let sum = 0;
+  for (index = 0; index <= num; index += 1) {
+    sum += index;
+  }
+  return sum;
+}
+console.log(summation(5));
