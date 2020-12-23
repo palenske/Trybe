@@ -1,5 +1,4 @@
 # JavaScript - Primeiros passos
-
 ## "O JavaScript é a linguagem mais popular do mundo segundo o Stack Overflow e, além de ser utilizada em diversos contextos, faz páginas em toda a web terem comportamentos dinâmicos!" - @beTrybe
 
 ### Serei capaz de
@@ -8,7 +7,7 @@
 - Criar códigos que usam estruturas condicionais, como o if/else.
 
 ## Conteúdo e exercícios:
-## [exercise_1.js](exercise_1.js)
+## [exercise_1](exercise_1.js)
 ### Lista de Desafios:
 - [x] **1. Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas variáveis, a e b , definidas no começo com os valores que serão operados. Faça programas para:**
 - Adição
