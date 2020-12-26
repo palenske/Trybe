@@ -46,5 +46,18 @@ holidayButton('Feriados');
 
 // exercise 3:
 function showHolidays() {
-  // test
+  function changeColor() {
+    const allHolidays = document.getElementsByClassName('holiday');
+    for (let index = 0; index < allHolidays.length; index += 1) {
+      if (allHolidays[index].style.backgroundColor != 'pink') {
+        allHolidays[index].style.backgroundColor = 'pink';
+      } else {
+        allHolidays[index].style.backgroundColor = 'rgb(238,238,238)';
+      }
+    }
+  }
+  const btnChange = document.querySelector('#btn-holiday');
+  btnChange.addEventListener('click', changeColor);
 }
+
+showHolidays();
