@@ -71,9 +71,10 @@ function showSextou() {
     let fridayNumber = [4, 11, 18, 25];
     for (let index = 0; index < allFridays.length; index += 1) {
       if (allFridays[index].innerHTML !== 'SEXTOU!') {
-        allFridays[index].innerHTML = 'SEXTOU!'; 
+        allFridays[index].innerHTML = 'SEXTOU!';
       } else {
         allFridays[index].innerHTML = fridayNumber[index];
+        allFridays[index].style.fontSize = '20px';
       }
     }
   }
@@ -81,3 +82,23 @@ function showSextou() {
   btnChange.addEventListener('click', changeText);
 }
 showSextou();
+
+// exercise 6:
+function zoomOver() {
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseover', function (event) {
+    if(event.target.className.indexOf('day') === 0) {
+      event.target.style.fontSize = '27px';
+    }
+  })
+};
+
+function zoomOut() {
+  let days = document.querySelector('#days');
+  days.addEventListener('mouseout', function (event) {
+    event.target.style.removeProperty('font-size');
+  })
+};
+
+zoomOver();
+zoomOut();
