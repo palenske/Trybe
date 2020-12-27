@@ -34,15 +34,15 @@ function setDays() {
 }
 setDays();
 
-// exercise 2:
-function holidayButton(btnName) {
+// exercise 2
+function createBtn(btnName, btnId) {
   const fatherBtn = document.querySelector('.buttons-container');
   const btn = document.createElement('button');
   btn.innerHTML = btnName;
-  btn.setAttribute('id', 'btn-holiday');
+  btn.setAttribute('id', btnId);
   fatherBtn.appendChild(btn);
 }
-holidayButton('Feriados');
+createBtn('Feriados', 'btn-holiday');
 
 // exercise 3:
 function showHolidays() {
@@ -59,5 +59,7 @@ function showHolidays() {
   const btnChange = document.querySelector('#btn-holiday');
   btnChange.addEventListener('click', changeColor);
 }
-
 showHolidays();
+
+// exercise 4: (adapting the function of the exercise 2)
+createBtn('Sexta-feira', 'btn-friday');
