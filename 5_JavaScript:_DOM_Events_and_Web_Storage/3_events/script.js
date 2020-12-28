@@ -141,16 +141,56 @@ function zoomOut() {
     event.target.style.removeProperty("font-size");
   });
 }
-
 zoomOver();
 zoomOut();
 
 // exercise 7:
 function newTask(taskName) {
-  const taskStorage = document.querySelector('.my-tasks');
-  const task = document.createElement('span');
+  const taskStorage = document.querySelector(".my-tasks");
+  const task = document.createElement("span");
   task.innerHTML = taskName;
   taskStorage.appendChild(task);
 }
+newTask("Exercícios atrasados");
 
-newTask('Tarefas atrasadas');
+// exercise 8:
+function addColoredDiv(color) {
+  const taskStorage = document.querySelector(".my-tasks");
+  const newDiv = document.createElement("div");
+  newDiv.style.backgroundColor = color;
+  newDiv.className = "task";
+  taskStorage.appendChild(newDiv);
+}
+addColoredDiv("green");
+
+// exercise 9:
+function selectTask() {
+  let taskDiv = document.querySelector(".task");
+  taskDiv.addEventListener("click", function (event) {
+    if (event.target.className.indexOf("selected") === -1) {
+      event.target.classList.add("selected");
+    } else {
+      event.target.classList.remove("selected");
+    }
+  });
+}
+selectTask();
+
+// exercise 10:
+function putTaskColor() {
+  const selectedTask = document.getElementsByClassName("task selected");
+  const days = document.querySelector("#days");
+  const taskDiv = document.querySelector(".task");
+  let taskColor = taskDiv.style.backgroundColor;
+
+  days.addEventListener("click", function (event) {
+    let targetColor = event.target.style.backgroundColor;
+    if (selectedTask.length > 0 && targetColor !== taskColor) {
+      let color = selectedTask[0].style.backgroundColor;
+      event.target.style.color = color;
+    } else if (targetColor === taskColor && selectedTask.length !== 0) {
+      event.target.style.color = "rgb(119,119,119)";
+    }
+  });
+}
+putTaskColor();
