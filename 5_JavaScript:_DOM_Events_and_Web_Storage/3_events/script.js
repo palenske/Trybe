@@ -151,7 +151,7 @@ function newTask(taskName) {
   task.innerHTML = taskName;
   taskStorage.appendChild(task);
 }
-newTask("Exercícios atrasados");
+newTask("Projeto: ");
 
 // exercise 8:
 function addColoredDiv(color) {
@@ -176,7 +176,7 @@ function selectTask() {
 }
 selectTask();
 
-// exercise 10:
+// exercise 10: (ajuda do gabarito)
 function putTaskColor() {
   const selectedTask = document.getElementsByClassName("task selected");
   const days = document.querySelector("#days");
@@ -194,3 +194,34 @@ function putTaskColor() {
   });
 }
 putTaskColor();
+
+// bônus (ajuda do gabarito)
+function addNewTask() {
+  let getInputField = document.querySelector('#task-input');
+  let addInputButton = document.querySelector('#btn-add');
+  let getTaskList = document.querySelector('.task-list');
+
+  addInputButton.addEventListener('click', function() {
+    if (getInputField.value.length > 0) {
+      let newLi = document.createElement('li');
+      newLi.innerText = getInputField.value;
+
+      getTaskList.appendChild(newLi);
+      getInputField.value = '';
+    } else {
+      alert('Error: Digite ao menos 1 caractere.');
+    }
+  })
+
+  getInputField.addEventListener('keyup', function(event) {
+    if (event.keyCode === 13 && getInputField.value.length > 0) {
+      let newLi = document.createElement('li');
+      newLi.innerText = getInputField.value;
+
+      getTaskList.appendChild(newLi);
+      getInputField.value = '';
+    }
+  });
+};
+
+addNewTask();
