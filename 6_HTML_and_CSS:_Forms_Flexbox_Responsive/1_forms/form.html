@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de currículo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>Cadastro de currículo</h1>
+      <p>
+        <em
+          >Garanta já sua vaga nas melhores oportunidades do mercado. Registre
+          seu currículo agora!</em
+        >
+      </p>
+    </header>
+
+    <form class="box-style" action="" method="GET">
+      <fieldset>
+        <legend>Dados Pessoais:</legend>
+        <!-- Nome -->
+        <div class="conteudo-linha">
+          <label for="full-name">Nome completo</label>
+          <input
+            type="text"
+            name="full-name"
+            id="full-name"
+            maxlength="40"
+            required
+          />
+        </div>
+        <!-- E-mail -->
+        <div class="conteudo-linha">
+          <label for="email">E-mail</label>
+          <input type="text" name="email" id="email" maxlength="50" required />
+        </div>
+        <!-- CPF -->
+        <div class="conteudo-linha">
+          <label for="cpf">CPF</label>
+          <input type="text" name="cpf" id="cpf" maxlength="11" required />
+        </div>
+        <!-- Endereço -->
+        <div class="conteudo-linha">
+          <label for="endereco">Endereço</label>
+          <input
+            type="text"
+            name="endereco"
+            id="endereco"
+            maxlength="200"
+            required
+          />
+        </div>
+        <!-- Cidade -->
+        <div class="conteudo-linha">
+          <label for="cidade">Cidade</label>
+          <input type="text" name="cidade" id="cidade" max="28" required />
+        </div>
+        <!-- Estado -->
+        <div class="conteudo-linha">
+          <label for="estado">Escolha um estado</label>
+          <select name="estado" id="estado" value="" required></select>
+        </div>
+        <!--  Moradia -->
+        <div class="conteudo-linha">
+          <legend>Tipo de moradia</legend>
+          <input type="radio" name="moradia" id="casa" value="casa" required />
+          <label for="casa">Moro numa casa</label>
+          <input
+            type="radio"
+            name="moradia"
+            id="apartamento"
+            value="apartamento"
+            required
+          />
+          <label for="apartamento">Moro num Ap</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Dados do seu último emprego</legend>
+        <!-- Resumo do currículo -->
+        <div class="conteudo-linha">
+          <label for="resumo-cv">Resumo do currículo</label>
+          <textarea
+            name="resumo-cv"
+            id="resumo-cv"
+            maxlength="1000"
+            required
+            class="abstract-style"
+          ></textarea>
+        </div>
+        <!-- Cargo -->
+        <div class="conteudo-linha">
+          <label for="cargo">Cargo</label>
+          <input type="text" name="cargo" id="cargo" maxlength="40" required />
+        </div>
+        <!-- Descrição do cargo -->
+        <div class="conteudo-linha">
+          <label for="descri-cargo">Descrição do cargo</label>
+          <input
+            type="text"
+            name="descri-cargo"
+            id="descri-cargo"
+            maxlength="500"
+            required
+          />
+        </div>
+        <!-- Data de ínicio -->
+        <input type="date" />
+      </fieldset>
+    </form>
+  </body>
+</html>
