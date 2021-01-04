@@ -9,5 +9,5 @@
 
 ### Projetos:
 - [x] [Pixels-Art](https://palenske.github.io/pixels-art/) 
-- [ ] To-do-List
+- [x] To-do-List
 
