@@ -12,15 +12,21 @@
   background-color: rgb(246, 247, 248);
   border: 1px solid rebeccapurple;
   border-radius: 3px;
-  margin: 40px auto;
-  padding: 50px;
-  width: 80%;
+  margin: 30px auto;
+  padding: 30px;
+  width: 40%;
 }
 
 .cabecalho {
+  margin-bottom: -10px;
   text-align: center;
+  width: 50%;
 }
 
 .conteudo-linha {
-  margin: 10px;
+  margin: 10px 20px;
+}
+
+.lado-a-lado {
+  display: inline;
 }
