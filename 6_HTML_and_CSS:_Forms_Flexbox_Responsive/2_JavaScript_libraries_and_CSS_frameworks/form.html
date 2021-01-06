@@ -4,151 +4,165 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário de currículo</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/bulma.min.css" />
     <script src="script.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Cadastro de currículo</h1>
-      <p>
+    <header class="section">
+      <h1 class="title has-text-centered">Cadastro de currículo</h1>
+      <p class="subtitle has-text-centered">
         <em
           >Garanta já sua vaga nas melhores oportunidades do mercado. Registre
           seu currículo agora!</em
         >
       </p>
     </header>
-    <form>
-      <fieldset>
-        <legend>Dados Pessoais:</legend>
-        <div>
-          <!-- Nome -->
-          <label for="full-name">Nome completo: </label>
+
+    <div class="section">
+      <form action="" method="GET">
+        <!-- Nome -->
+        <div class="field">
+          <label class="label" for="full-name">Nome completo</label>
           <input
+            class="input"
             type="text"
             name="full-name"
             id="full-name"
+            placeholder="Digite seu nome completo"
             maxlength="40"
             required
           />
         </div>
-        <div>
-          <!-- E-mail -->
-          <label for="email">E-mail: </label>
+        <!-- E-mail -->
+        <div class="field">
+          <label class="label" for="email">E-mail</label>
           <input
+            class="input"
             type="text"
             name="email"
             id="email"
+            placeholder="Digite seu e-mail"
             maxlength="50"
             required
           />
         </div>
-        <div>
-          <!-- CPF -->
-          <label for="cpf">CPF: </label>
+        <!-- CPF -->
+        <div class="field">
+          <label class="label" for="cpf">CPF</label>
           <input
+            class="input"
             type="text"
             name="cpf"
             id="cpf"
+            placeholder="Digite apenas números"
             maxlength="11"
             required
           />
         </div>
-        <div>
-          <!-- Endereço -->
-          <label for="endereco">Endereço: </label>
+        <!-- Endereço -->
+        <div class="field">
+          <label class="label" for="endereco">Endereço</label>
           <input
+            class="input"
             type="text"
             name="endereco"
             id="endereco"
+            placeholder="Digite seu endereço"
             maxlength="200"
             required
           />
         </div>
-        <div>
-          <!-- Cidade -->
-          <label for="cidade">Cidade: </label>
+        <!-- Cidade -->
+        <div class="field">
+          <label class="label" for="cidade">Cidade</label>
           <input
+            class="input"
             type="text"
             name="cidade"
             id="cidade"
+            placeholder="Informe sua cidade"
             max="28"
             required
           />
         </div>
-        <div>
-          <!-- Estado -->
-          <label for="estado">Estado: </label>
-          <select name="estado" id="estado" value="" required>
-            <option value="UF">UF</option>
-          </select>
+        <!-- Estado -->
+        <div class="field">
+          <label class="label" for="estado">Estado</label>
+          <div class="select">
+            <select name="estado" id="estado" required></select>
+          </div>
         </div>
-        <div>
-          <!--  Moradia -->
-          <span>Moradia: </span>
-          <input
-            type="radio"
-            name="moradia"
-            id="casa"
-            value="casa"
-            required
-          />
-          <label for="casa">Casa</label>
-          <input
-            type="radio"
-            name="moradia"
-            id="apartamento"
-            value="apartamento"
-            required
-          />
-          <label for="apartamento">Apartamento</label>
+        <!--  Moradia -->
+        <div class="field">
+          <legend class="label">Moradia</legend>
+          <label class="radio" for="casa">
+            <input
+              type="radio"
+              name="moradia"
+              id="casa"
+              value="casa"
+              required
+            />
+            Casa
+          </label>
+          <label class="radio" for="apartamento">
+            <input
+              type="radio"
+              name="moradia"
+              id="apartamento"
+              value="apartamento"
+              required
+            />
+            Apartamento
+          </label>
         </div>
-      </fieldset>
-      <br />
-      <fieldset>
-        <legend>Dados do seu último emprego:</legend>
         <!-- Resumo do currículo -->
-        <div>
-          <label for="resumo-cv">Resumo do currículo</label>
+        <div class="field">
+          <label class="label">Resumo do currículo</label>
           <textarea
+            class="textarea"
             name="resumo-cv"
             id="resumo-cv"
             maxlength="1000"
+            placeholder="Escreva um resumo sobre sua carreira profissional"
             required
-            cols="20"
-            rows="5"
           ></textarea>
         </div>
         <!-- Cargo -->
-        <div>
-          <label for="cargo">Cargo</label>
+        <div class="field">
+          <label class="label" for="cargo">Cargo</label>
           <input
+            class="input"
             type="text"
             name="cargo"
             id="cargo"
             maxlength="40"
+            placeholder="Informe o cargo que você ocupava"
             required
           />
         </div>
         <!-- Descrição do cargo -->
-        <div>
-          <label for="descri-cargo">Descrição do cargo</label>
+        <div class="field">
+          <label class="label" for="descri-cargo">Descrição do cargo</label>
           <input
+            class="input"
             type="text"
             name="descri-cargo"
             id="descri-cargo"
             maxlength="500"
+            placeholder="Descreva o que você fazia em seu último cargo"
             required
           />
         </div>
         <!-- Data de ínicio -->
-        <div>
-          <label for="data-inicio">Data de início</label>
-          <input type="text" required>
+        <div class="field">
+          <label class="label" for="data-inicio">Data de início</label>
+          <input type="date" required />
         </div>
-      </fieldset>
-      <br>
-      <button type="submit">Enviar</button>
-      <button type="reset">Resetar</button>
-    </form>
+
+        <button class="button is-success" type="submit">Enviar</button>
+        <button class="button is-danger" type="reset">Resetar</button>
+      </form>
+    </div>
   </body>
 </html>
