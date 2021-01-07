@@ -43,3 +43,24 @@ window.onload = function () {
     selectOfEstates.appendChild(estateOpt);
   }
 }
+
+function validateData(data) {
+  if (data.indexOf('/') === 2 || data.indexOf('/') === 5) {
+    const day = data.slice(0, 2);
+    const month = data.slice(3, 5);
+    const year = data.slice(6, 10);
+    if ((day > 0 && day < 31) && (month > 0 && month <= 12) && (year > 0 && year.length === 4)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function checkData() {
+  const dataInput = document.querySelector('#data').value;
+  const validDate = validateData(dataInput);
+  if (validDate !== true){
+    alert('Data invalida!')
+    dataInput = '';
+  }
+}
