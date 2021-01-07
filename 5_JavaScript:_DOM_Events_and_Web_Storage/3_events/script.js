@@ -201,7 +201,7 @@ function addNewTask() {
   let addInputButton = document.querySelector('#btn-add');
   let getTaskList = document.querySelector('.task-list');
 
-  addInputButton.addEventListener('click', function() {
+  addInputButton.addEventListener('click', function () {
     if (getInputField.value.length > 0) {
       let newLi = document.createElement('li');
       newLi.innerText = getInputField.value;
@@ -213,7 +213,7 @@ function addNewTask() {
     }
   })
 
-  getInputField.addEventListener('keyup', function(event) {
+  getInputField.addEventListener('keyup', function (event) {
     if (event.keyCode === 13 && getInputField.value.length > 0) {
       let newLi = document.createElement('li');
       newLi.innerText = getInputField.value;
@@ -223,5 +223,4 @@ function addNewTask() {
     }
   });
 };
-
 addNewTask();
