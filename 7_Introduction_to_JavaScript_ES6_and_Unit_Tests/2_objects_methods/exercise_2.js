@@ -50,5 +50,13 @@ const totalStudants = obj => {
   }
   return numberOfStudents;
 }
-
 console.log(`Total de estudantes: ${totalStudants(allLessons)}`);
+
+// exercício 7
+const valueByNumber = (obj, num) => Object.values(obj)[num];
+console.log(valueByNumber(lesson1, 0));
+
+// exercício 8
+const verifyPair = (obj, key, value) => {
+  
+}
