@@ -66,8 +66,6 @@ const books = [
 const expectedResult = true
 
 function someBookWasReleaseOnThe80s() {
-  // escreva seu código aqui
-  console.log(books.some(book => book.releaseYear >= 1980 && book.releaseYear < 1989));
   return books.some(book => book.releaseYear >= 1980 && book.releaseYear < 1989);
 }
 
