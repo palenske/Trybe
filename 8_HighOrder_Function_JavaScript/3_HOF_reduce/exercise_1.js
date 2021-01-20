@@ -10,7 +10,7 @@ const arrays = [
 
 function flatten() {
   // escreva seu código aqui
-  const juntaTudo = (previousValue, nextValue) => previousValue.concat(nextValue);
+  const juntaTudo = (previousValue, nextValue) => previousValue.concat(nextValue); // ~> concatenar arrays
   return arrays.reduce(juntaTudo, []);
 }
 
