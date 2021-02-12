@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 
-const taskList = ['a', 'b', 'c'];
+const taskList = ['Abrir a geladeira', 'Pegar qualquer coisa', 'Esquentar no micro-ondas', 'Comer'];
 
 const task = (value) => {
   return (
