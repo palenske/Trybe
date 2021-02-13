@@ -1,13 +1,50 @@
 body {
+  background-color: red;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pokeName {
+  font-weight: bold;
+}
+
+.Bug {
+  background-color: #a8b820;
+  border-radius: 50px;
+}
+
+.Electric {
+  background-color: #f8d030;
+  border-radius: 50px;
+}
+
+.Dragon {
+  background-color: #7038f8;
+  border-radius: 50px;
+  color: white;
+}
+
+.Fire {
+  background-color: #f08030;
+  border-radius: 50px;
+}
+
+.Normal {
+  background-color: #a8a878;
+  border-radius: 50px;
+}
+
+.Poison {
+  background-color: #a040a0;
+  border-radius: 50px;
+  color: white;
+}
+
+.Psychic {
+  background-color: #f85888;
+  border-radius: 50px;
 }
