@@ -4,14 +4,15 @@ import PropTypes from 'prop-types';
 class Pokemon extends React.Component {
   render() {
     const { id, name, type, averageWeight, image } = this.props.pokemon;
+    const { value, measurementUnit } = averageWeight;
 
     return (
-      <section className="pokemon">
+      <section tabIndex='0' className="pokemon">
         <img src={image} alt={`${name} sprite`} />
         <div>
           <p className='pokeName'> {`${name} #${id}`}</p>
           <p className={type}>{type}</p>
-          <p> {`Average weight: ${averageWeight.value} ${averageWeight.measurementUnit}`}</p>
+          <p> {`Average weight: ${value} ${measurementUnit}`}</p>
         </div>
       </section>
     );
