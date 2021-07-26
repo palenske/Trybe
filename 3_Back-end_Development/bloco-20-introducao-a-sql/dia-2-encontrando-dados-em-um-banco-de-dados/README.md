@@ -1,4 +1,4 @@
-> Aprendizados do dia:
+<h1>Conteúdo do dia</h1>
 
 - Compreender o que é uma query SQL e quais são seus tipos de comando
 - Gerar valores com `SELECT`
