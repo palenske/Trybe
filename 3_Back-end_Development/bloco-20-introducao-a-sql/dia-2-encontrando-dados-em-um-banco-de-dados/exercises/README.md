@@ -1,4 +1,4 @@
-> Exercícios
+<h1>Exercícios</h1>
 - [X] 1 - Escreva uma query para exibir a string "This is SQL Exercise, Practice and Solution".
 - [X] 2 - Escreva uma query para exibir três números em três colunas.
 - [X] 3 - Escreva uma query para exibir a soma dos números 10 e 15.
