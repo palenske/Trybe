@@ -1,7 +1,5 @@
 <h1>Exercícios</h1>
 
-
-
 - [x] 1 - Insira as produções da Pixar abaixo na tabela Movies :
   - `Monstros SA, de Pete Docter, lançado em 2001, com 92 minutos de duração.`
   - `Procurando Nemo, de John Lasseter, lançado em 2003, com 107 minutos de duração.`
@@ -16,3 +14,11 @@
   - `WALL-E, classificado em 9.9, lucrou 290 milhões no mercado interno e 280 milhões no mercado internacional.`
 - [x] 6 - Exclua da tabela Movies o filme "WALL-E".
 - [x] 7 - Exclua da tabela Movies todos os filmes dirigidos por "Andrew Staton".
+
+<h1>Bônus</h1>
+
+>utilizando o mesmo `schema` dos exercícios anteriores.
+
+- [x] 8 - Altere a classificação da tabela BoxOffice para 9.0 de todos os filmes que lucraram mais de 400 milhões no mercado interno.
+- [x] 9 - Altere a classificação da tabela BoxOffice para 6.0 de todos os filmes que lucraram menos de 300 milhões no mercado internacional e mais de 200 milhões no mercado interno.
+- [x] 10 - Exclua da tabela Movies todos os filmes com menos de 100 minutos de duração.
