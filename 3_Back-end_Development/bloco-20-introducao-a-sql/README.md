@@ -10,4 +10,6 @@
 - Criar bancos de dados e manipular tabelas;
     - [Como criar e manipular tabelas](bloco-20-introducao-a-sql/dia-4-manipulando_tabelas)
 
-- [Projeto](https://github.com/palenske/backend-project_mysql-all-for-one)
+## Projetos Back-end
+
+- Projeto - [mysql-all-for-one](https://github.com/tryber/sd-010-b-mysql-all-for-one/tree/palenske-mysql-all-for-one)
