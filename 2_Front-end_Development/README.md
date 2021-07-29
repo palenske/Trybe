@@ -26,5 +26,5 @@
 
 - Projeto - [StarWars Datatable com Context API e Hooks](https://github.com/tryber/sd-010-b-project-starwars-planets-search/tree/palenske-starwars-planets-search)
 
-- Projeto - [App de Receitas](https://github.com/tryber/sd-010-b-project-recipes-app/tree/main-group-17)
+- Projeto - [App de Receitas](https://github.com/tryber/sd-010-b-project-recipes-app/tree/main-group-17) (em grupo) ([fork](https://github.com/palenske/frontend-final-project-recipes-app))
 
