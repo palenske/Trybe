@@ -1,3 +1,13 @@
+# Conteúdo e competências
+
+- Utilizar a biblioteca React para criar aplicações de front-end que se conectam com APIs
+- React
+- Componentes com Estado, Eventos e Formulários com React
+- Ciclo de Vida de Componentes e React Router
+- RTL
+- Redux
+- Context API e React Hooks 
+
 ## Projetos Front-End
 
 - Projeto - [Movie Cards Library](https://github.com/tryber/sd-09-project-movie-cards-library/tree/palenske-movie-cards-library)
