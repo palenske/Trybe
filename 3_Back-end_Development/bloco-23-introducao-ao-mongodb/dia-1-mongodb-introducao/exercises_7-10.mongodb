@@ -1,0 +1,13 @@
+use('sample');
+
+// exercise 7
+db.books.count();
+
+// exercise 8
+db.books.find({ status: "PUBLISH" }).count();
+
+// exercise 9
+db.books.find({}, { _id: 0, title: 1, isbn: 1, pageCount: 1 }).limit(3);
+
+// exercise 10
+db.books.find({ status: "MEAP" }, { title: 1, authors: 1, status: 1}).skip(5).limit(10);
