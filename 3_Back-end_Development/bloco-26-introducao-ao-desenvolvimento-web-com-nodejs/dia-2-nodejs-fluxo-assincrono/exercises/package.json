@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ex1": "node exercise_01.js",
-    "ex3": "node exercise_02to03.js"
+    "ex3": "node exercise_02to03.js",
+    "ex4": "node exercise_04.js"
   },
   "author": "palenske",
   "license": "ISC"
