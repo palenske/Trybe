@@ -18,7 +18,15 @@ async function removeCharacter() { // 4.3
   return await fs.readFile('./simpsons.json', 'utf-8')
   .then((content) => JSON.parse(content))
   .then((characters) => characters.filter(({id}) => id !== '6' && id !== '10'))
-  .then((newCharacters) => fs.writeFile('./simpsons.json', JSON.stringify(newCharacters)));
+  .then((newCharacters) => fs.writeFile('./simpsons.json', JSON.stringify(newCharacters)))
+  .catch((err) => err.message);
 }
 
-removeCharacter();
+async function createFamily() { // 4.3
+  return await fs.readFile('./simpsons.json', 'utf-8')
+  .then((content) => JSON.parse(content))
+  .then((characters) => characters.filter(({id}) => Number(id) > 0 && Number(id) < 5)) // faltou a Maggie ;/
+  .then((simpsonsFamily) => fs.writeFile('./simpsonFamily.json', JSON.stringify(simpsonsFamily)));
+}
+
+createFamily();
