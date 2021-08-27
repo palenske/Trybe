@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 async function showCharacters() {
   return await fs.readFile('./simpsons.json', 'utf-8')
   .then((content) => JSON.parse(content))
-  .then((characters) => characters.map(({ id, name }) => console.log(`${id} - ${name}`)));
+  .then((characters) => characters.forEach(({ id, name }) => console.log(`${id} - ${name}`)));
 }
 
 async function charById(id) {
@@ -14,4 +14,12 @@ async function charById(id) {
   .catch(() => console.log('id não encontrado'));
 }
 
-charById(10);
+async function removeCharacter() {
+  return await fs.readFile('./simpsons.json', 'utf-8')
+  .then((content) => JSON.parse(content))
+  .then((characters) => characters.filter(({id}) => id !== '6' && id !== '10'))
+  .then((characters) => characters.forEach(({ id, name }) => console.log(`${id} - ${name}`)));
+}
+
+
+removeCharacter();
