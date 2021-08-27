@@ -29,7 +29,21 @@ async function createFamily() {
     .then((simpsonsFamily) => fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily)));
 }
 
+async function adoptNelson() {
+  const nelson = await fs.readFile('./simpsons.json', 'utf-8')
+    .then((content) => JSON.parse(content))
+    .then((characters) => characters.find(({ name }) => name === 'Nelson Muntz'));
+
+  const simpsonsFamily = await fs.readFile('./simpsonsFamily.json', 'utf-8')
+    .then((content) => JSON.parse(content));
+
+  simpsonsFamily.push(nelson);
+  fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily));
+}
+
+
 // showCharacters(); // 4.1
 // charById(1); // 4.2
 // removeCharacter(); // 4.3
 // createFamily(); // 4.4
+// adoptNelson(); // 4.5
