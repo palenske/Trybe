@@ -17,9 +17,8 @@ async function charById(id) { // 4.2
 async function removeCharacter() { // 4.3
   return await fs.readFile('./simpsons.json', 'utf-8')
   .then((content) => JSON.parse(content))
-  .then((characters) => characters.forEach(({ id, name }) => {
-    if(id !== '6' && id !== '10') return console.log(`${id} - ${name}`)
-  }));
+  .then((characters) => characters.filter(({id}) => id !== '6' && id !== '10'))
+  .then((newCharacters) => fs.writeFile('./simpsons.json', JSON.stringify(newCharacters)));
 }
 
 removeCharacter();
