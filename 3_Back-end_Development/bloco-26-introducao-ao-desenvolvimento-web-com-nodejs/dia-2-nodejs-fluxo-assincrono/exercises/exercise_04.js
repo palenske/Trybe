@@ -25,7 +25,7 @@ async function removeCharacter() {
 async function createFamily() {
   return await fs.readFile('./simpsons.json', 'utf-8')
     .then((content) => JSON.parse(content))
-    .then((characters) => characters.filter(({ id }) => Number(id) > 0 && Number(id) < 5)) // faltou a Maggie ;/
+    .then((characters) => characters.filter(({ id }) => Number(id) > 0 && Number(id) < 5))
     .then((simpsonsFamily) => fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily)));
 }
 
@@ -41,9 +41,22 @@ async function adoptNelson() {
   fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily));
 }
 
+async function nelsonToMaggie() {
+  const maggie = await fs.readFile('./simpsons.json', 'utf-8')
+    .then((content) => JSON.parse(content))
+    .then((characters) => characters.find(({ name }) => name === 'Maggie Simpson'));
+
+  const simpsonsFamily = await fs.readFile('./simpsonsFamily.json', 'utf-8')
+    .then((content) => JSON.parse(content))
+    .then((family) => family.map((char) => char.name.includes('Nelson') ?  maggie : char));
+
+  fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily));
+}
+
 
 // showCharacters(); // 4.1
 // charById(1); // 4.2
 // removeCharacter(); // 4.3
 // createFamily(); // 4.4
 // adoptNelson(); // 4.5
+nelsonToMaggie(); // 4.6
