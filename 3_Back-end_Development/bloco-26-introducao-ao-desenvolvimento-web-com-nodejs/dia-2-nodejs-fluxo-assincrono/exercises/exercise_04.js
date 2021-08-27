@@ -1,32 +1,35 @@
 const fs = require('fs').promises;
 
-async function showCharacters() { // 4.1
+async function showCharacters() {
   return await fs.readFile('./simpsons.json', 'utf-8')
-  .then((content) => JSON.parse(content))
-  .then((characters) => characters.forEach(({ id, name }) => console.log(`${id} - ${name}`)));
+    .then((content) => JSON.parse(content))
+    .then((characters) => characters.forEach(({ id, name }) => console.log(`${id} - ${name}`)));
 }
 
-async function charById(id) { // 4.2
+async function charById(id) {
   return await fs.readFile('./simpsons.json', 'utf-8')
-  .then((content) => JSON.parse(content))
-  .then((characters) => characters.find((char) => char.id == id))
-  .then(({ id, name }) => console.log(`${id} - ${name}`))
-  .catch(() => console.log('id não encontrado'));
+    .then((content) => JSON.parse(content))
+    .then((characters) => characters.find((char) => char.id == id))
+    .then(({ id, name }) => console.log(`${id} - ${name}`))
+    .catch(() => console.log('id não encontrado'));
 }
 
-async function removeCharacter() { // 4.3
+async function removeCharacter() {
   return await fs.readFile('./simpsons.json', 'utf-8')
-  .then((content) => JSON.parse(content))
-  .then((characters) => characters.filter(({id}) => id !== '6' && id !== '10'))
-  .then((newCharacters) => fs.writeFile('./simpsons.json', JSON.stringify(newCharacters)))
-  .catch((err) => err.message);
+    .then((content) => JSON.parse(content))
+    .then((characters) => characters.filter(({ id }) => !['6', '10'].includes(id)))
+    .then((newCharacters) => fs.writeFile('./simpsons.json', JSON.stringify(newCharacters)))
+    .catch((err) => err.message);
 }
 
-async function createFamily() { // 4.3
+async function createFamily() {
   return await fs.readFile('./simpsons.json', 'utf-8')
-  .then((content) => JSON.parse(content))
-  .then((characters) => characters.filter(({id}) => Number(id) > 0 && Number(id) < 5)) // faltou a Maggie ;/
-  .then((simpsonsFamily) => fs.writeFile('./simpsonFamily.json', JSON.stringify(simpsonsFamily)));
+    .then((content) => JSON.parse(content))
+    .then((characters) => characters.filter(({ id }) => Number(id) > 0 && Number(id) < 5)) // faltou a Maggie ;/
+    .then((simpsonsFamily) => fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamily)));
 }
 
-createFamily();
+// showCharacters(); // 4.1
+// charById(1); // 4.2
+// removeCharacter(); // 4.3
+// createFamily(); // 4.4
