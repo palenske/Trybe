@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha tests",
-    "classifyNumber": "node classifyNumber.js"
+    "classifyNumber": "node classifyNumber.js",
+    "writeContent": "node writeContent.js"
   },
   "author": "palenske",
   "license": "ISC",

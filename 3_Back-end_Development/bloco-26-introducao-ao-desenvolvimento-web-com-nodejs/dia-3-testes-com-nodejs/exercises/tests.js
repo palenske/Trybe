@@ -1,5 +1,6 @@
 const { expect } = require('chai');
 const classifyNumber = require('./classifyNumber');
+const writeContent = require('./writeContent');
 
 describe('Executa função classifyNumber', () => {
   describe('Quando o parâmetro não é um número', () => {
@@ -54,6 +55,22 @@ describe('Executa função classifyNumber', () => {
 
       it('igual a "neutro"', () => {
         expect(resposta).equals('neutro');
+      });
+    });
+  });
+});
+
+describe('Executa função writeContent', () => {
+  describe('Quando um conteúdo é escrito em "arquivo.txt"', () => {
+    describe('a resposta', () => {
+      const resposta = writeContent('arquivo.txt', 'conteúdo');
+
+      it('é uma "String"', () => {
+        expect(resposta).a('string');
+      });
+
+      it('igual a "ok"', () => {
+        expect(resposta).equals('ok');
       });
     });
   });
