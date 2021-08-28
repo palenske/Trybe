@@ -1,6 +1,8 @@
-const { expect } = require('chai');
 const classifyNumber = require('./classifyNumber');
 const writeContent = require('./writeContent');
+const { expect } = require('chai');
+const fs = require('fs');
+const sinon = require('sinon');
 
 describe('Executa função classifyNumber', () => {
   describe('Quando o parâmetro não é um número', () => {
@@ -61,6 +63,14 @@ describe('Executa função classifyNumber', () => {
 });
 
 describe('Executa função writeContent', () => {
+  before(() => {
+    sinon.stub(fs, 'writeFileSync');
+  });
+
+  after(() => {
+    fs.writeFileSync.restore();
+  });
+
   describe('Quando um conteúdo é escrito em "arquivo.txt"', () => {
     describe('a resposta', () => {
       const resposta = writeContent('arquivo.txt', 'conteúdo');
