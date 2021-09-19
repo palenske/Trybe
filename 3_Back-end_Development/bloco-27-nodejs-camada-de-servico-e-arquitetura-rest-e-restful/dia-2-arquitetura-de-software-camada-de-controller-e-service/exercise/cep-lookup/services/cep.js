@@ -1,21 +1,32 @@
-const model = require('../models/cep');
-const { getAddress } = require('./utils/cepUtils');
+const models = require('../models/cep');
+const utils = require('./utils/formatter');
 
 const errorMessage = (code, message) => ({ error: { code, message } });
 
 const findByCep = async (cep) => {
-  const pureCep = cep.replace('-', '');
-  if (!/^[0-9]{8}$/.test(pureCep) || !/\d{5}-\d{3}/.test(cep)) {
-    return errorMessage('invalidData', 'CEP inválido');
-  };
-
-  const resultCep = await model.findByCep(pureCep);
+  const resultCep = await models.findByCep(utils.formatToNumericCep(cep));
 
   return resultCep
-    ? getAddress(resultCep)
-    : errorMessage('notFound', 'CEP não encontrado')
+    ? utils.formatAddress(resultCep)
+    : errorMessage('notFound', 'CEP não encontrado');
 };
+
+const createAddress = async ({ cep, logradouro, bairro, localidade, uf }) => {
+  const numericCep = utils.formatToNumericCep(cep)
+  const resultCep = await models.findByCep(numericCep);
+
+  return resultCep
+    ? errorMessage('alreadyExists', 'CEP já existente')
+    : await models.createAddress({
+      cep: numericCep,
+      logradouro,
+      bairro,
+      localidade,
+      uf
+    });
+}
 
 module.exports = {
   findByCep,
+  createAddress,
 };

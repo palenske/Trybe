@@ -13,6 +13,8 @@ app.get('/ping', (req_, res) => res.status(200).json({ message: 'pong!' }));
 
 app.get('/cep/:cep', Cep.findByCep);
 
+app.post('/cep', Cep.createAddress);
+
 app.use(errorReport);
 
 app.listen(PORT, () => {
