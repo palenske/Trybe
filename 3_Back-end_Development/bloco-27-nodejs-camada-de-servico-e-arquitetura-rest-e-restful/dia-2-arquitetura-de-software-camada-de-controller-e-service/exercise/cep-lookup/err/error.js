@@ -15,7 +15,6 @@ module.exports = (err, _req, res, _next) => {
   //   default:
   //     return res.status(505).json({ error: { code: 'internal', message: 'Internal server error' } });
   // } por que não funfaaaa? ;(
-
   if (err.isJoi) return res.status(400).json({ error: { message: err.details[0].message } });
   if (err.code) return res.status(statusByCode[err.code]).json(err);
   res.status(505).json({ error: { code: 'internal', message: 'Internal server error' } });

@@ -1,10 +1,11 @@
-const models = require('../models/cep');
+const models = require('../models/cepModels');
 const utils = require('./utils/formatter');
 
 const errorMessage = (code, message) => ({ error: { code, message } });
 
 const findByCep = async (cep) => {
-  const resultCep = await models.findByCep(utils.formatToNumericCep(cep));
+  const numericCep = utils.formatToNumericCep(cep);
+  const resultCep = await models.findByCep(numericCep);
 
   return resultCep
     ? utils.formatAddress(resultCep)
@@ -12,7 +13,7 @@ const findByCep = async (cep) => {
 };
 
 const createAddress = async ({ cep, logradouro, bairro, localidade, uf }) => {
-  const numericCep = utils.formatToNumericCep(cep)
+  const numericCep = utils.formatToNumericCep(cep);
   const resultCep = await models.findByCep(numericCep);
 
   return resultCep
