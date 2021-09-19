@@ -12,8 +12,6 @@ const formatAddress = ({ cep, logradouro, bairro, localidade, uf }) => ({
   uf,
 });
 
-
-
 module.exports = {
   formatAddress,
   formatToNumericCep

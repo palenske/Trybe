@@ -1,11 +1,9 @@
-const service = require('../services/cep');
 const rescue = require('express-rescue');
-const validate = require('../validation/cepValidate');
+const service = require('../services/cepServices');
+const validate = require('./validation/cepValidate');
 
 const findByCep = rescue(async (req, res, next) => {
-  const { cep } = req.params;
-
-
+  const { cep } = req.params
   const { error } = validate.cepFormat(cep);
   if (error) return next(error);
 
@@ -16,14 +14,13 @@ const findByCep = rescue(async (req, res, next) => {
 });
 
 const createAddress = rescue(async (req, res, next) => {
-
   const { error } = validate.addressFormat(req.body);
   if (error) return next(error);
 
-  const newAdress = await service.createAddress(req.body);
-  return newAdress.error
-    ? next(newAdress.error)
-    : res.status(201).json(newAdress);
+  const newAddress = await service.createAddress(req.body);
+  return newAddress.error
+    ? next(newAddress.error)
+    : res.status(201).json(newAddress);
 });
 
 module.exports = {
