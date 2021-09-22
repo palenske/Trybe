@@ -37,7 +37,8 @@ const getById = async (id) => {
 
 const update = async (id, name, brand) => {
   try {
-    await connection.query('UPDATE products SET name = ?, brand = ? WHERE id = ?', [name, brand, id])
+    const [updated] = await connection.query('UPDATE products SET name = ?, brand = ? WHERE id = ?', [name, brand, id])
+    return { id, name, brand };
   } catch (err) {
     console.error(err);
     return process.exit(1);

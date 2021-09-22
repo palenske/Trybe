@@ -5,37 +5,50 @@ const router = express.Router();
 
 router.route('/')
   .get(async (_req, res, next) => {
-    const products = await productModel.getAll();
-
-    res.send(products);
+    try {
+      const products = await productModel.getAll();
+      res.status(200).json(products);
+    } catch (error) {
+      next(error)
+    };
   })
-  .post(async (req, res, next) => {
+  .post(async (req, res, _next) => {
     const { name, brand } = req.body;
-    const newProduct = await productModel.add(name, brand);
-
-    res.send(newProduct)
+    try {
+      const newProduct = await productModel.add(name, brand);
+      res.status(201).json(newProduct);
+    } catch (error) {
+      res.status(500).send({ message: 'Internal Error' });
+    };
   });
 
 router.route('/:id')
   .get(async (req, res, next) => {
     const { id } = req.params;
     const product = await productModel.getById(id);
-    
-    res.send(product);
+
+    return product
+    ? res.status(201).json(product)
+    : res.status(404).send({ message: 'Not Found'});
   })
   .put(async (req, res, next) => {
     const { id } = req.params;
     const { name, brand } = req.body;
-    const product = await productModel.update(id, name, brand);
-
-    res.send(product);
+    try {
+      const product = await productModel.update(id, name, brand);
+      res.status(200).json(product);
+    } catch (error) {
+      next(error);
+    }
   })
-  .delete(async (req, res, next) => {
+  .delete(async (req, res, _next) => {
     const { id } = req.params;
-    
-    await productModel.exclude(id);
-
-    res.send(ok);
-  })
+    try {
+      const product = await productModel.exclude(id);
+      res.status(200).json(product);
+    } catch (error) {
+      res.status(500).send({ message: 'Internal Error' });
+    };
+  });
 
 module.exports = router;
