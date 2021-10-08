@@ -28,9 +28,8 @@ const getById = rescue(async (req, res, _next) => {
 
 const update = rescue(async (req, res, _next) => {
   const { id } = req.params;
-  
   const updatedUser = await userModel.updateUser(id, req.body);
-  console.log(updatedUser);
+
   return updatedUser
   ? res.status(200).json(updatedUser)
   : res.status(404).json({ error: true, message: 'Usuário não encontrado' });
