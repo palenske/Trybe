@@ -39,7 +39,7 @@ const updateUser = async (id, userData) => {
 
   const updatedUser = await connection()
     .then((db) => db.collection('users')
-      .findOneAndUpdate({ _id: userId }, { $set: userData }, { returnOriginal: false }))
+      .findOneAndUpdate({ _id: userId }, { $set: userData }))
     .then((result) => result.value);
 
   return updatedUser
