@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const createUser = require('./middlewares/UserMiddleware');
+const UserMiddleware = require('./middlewares/UserMiddleware');
 const error = require('./err/errorMiddleware');
 
 const app = express();
@@ -10,6 +10,8 @@ app.use(bodyParser.json());
 
 app.listen(PORT, () => { console.log(`Online na porta ${PORT}`); });
 
-app.post('/user', createUser);
+app.post('/user', UserMiddleware.create);
+app.get('/user', UserMiddleware.getUsers);
+
 
 app.use(error);

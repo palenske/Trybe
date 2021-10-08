@@ -8,4 +8,15 @@ const createUser = rescue(async (req, res, _next) => {
   res.status(201).json(newUser);
 });
 
-module.exports = [validateBody, createUser];
+const create = [validateBody, createUser];
+
+const getUsers = rescue(async (_req, res, _next) => {
+  const users = await userModel.getUsers();
+
+  res.status(200).json(users);
+});
+
+module.exports = {
+  create,
+  getUsers,
+};
