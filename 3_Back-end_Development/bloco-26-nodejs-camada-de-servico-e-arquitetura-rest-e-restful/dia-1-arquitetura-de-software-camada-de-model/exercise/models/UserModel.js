@@ -1,6 +1,14 @@
 const connection = require('./connection');
 const { ObjectId } = require('mongodb');
 
+
+const formater = ({ _id, password, ...user }) => {
+  return {
+    id: _id,
+    ...user,
+  }
+};
+
 const createUser = async ({ firstName, lastName, email, password }) => {
   const userObj = { firstName, lastName, email, password };
   
@@ -12,7 +20,7 @@ const createUser = async ({ firstName, lastName, email, password }) => {
 const getUsers = async () => {
   return connection()
     .then((db) => db.collection('users').find().toArray())
-    .then((result) => result);
+    .then((result) => result.map((user) => formater(user)));
 };
 
 const getById = async (id) => {
@@ -23,7 +31,7 @@ const getById = async (id) => {
     .then((db) => db.collection('users').findOne(mongoId));
   
   return user
-  ? user
+  ? formater(user)
   : null;
 }
 
