@@ -38,11 +38,12 @@ const updateUser = async (id, userData) => {
   const userId = new ObjectId(id);
 
   const updatedUser = await connection()
-    .then((db) => db.collection('users').updateOne({ _id: userId }, { $set: userData }))
-    .then((result) => result);
+    .then((db) => db.collection('users')
+      .findOneAndUpdate({ _id: userId }, { $set: userData }, { returnOriginal: false }))
+    .then((result) => result.value);
 
   return updatedUser
-    ? updatedUser
+    ? formater({userId, ...userData})
     : null;
 };
 
