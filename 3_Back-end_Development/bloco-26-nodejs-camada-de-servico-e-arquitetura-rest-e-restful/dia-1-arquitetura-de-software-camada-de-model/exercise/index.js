@@ -12,6 +12,7 @@ app.listen(PORT, () => { console.log(`Online na porta ${PORT}`); });
 
 app.post('/user', UserMiddleware.create);
 app.get('/user', UserMiddleware.getUsers);
+app.get('/user/:id', UserMiddleware.getById);
 
 
 app.use(error);

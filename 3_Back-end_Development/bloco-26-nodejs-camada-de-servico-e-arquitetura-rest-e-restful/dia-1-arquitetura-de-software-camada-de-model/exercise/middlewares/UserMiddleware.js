@@ -16,7 +16,18 @@ const getUsers = rescue(async (_req, res, _next) => {
   res.status(200).json(users);
 });
 
+const getById = rescue(async (req, res, _next) => {
+  const { id } = req.params;
+
+  const user = await userModel.getById(id);
+
+  return user
+  ? res.status(200).json(user)
+  : res.status(404).json({ error: true, message: 'Usuário não encontrado' });
+})
+
 module.exports = {
   create,
   getUsers,
+  getById,
 };
