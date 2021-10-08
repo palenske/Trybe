@@ -1,7 +1,6 @@
 const connection = require('./connection');
 const { ObjectId } = require('mongodb');
 
-
 const formater = ({ _id, password, ...user }) => {
   return {
     id: _id,
@@ -11,7 +10,7 @@ const formater = ({ _id, password, ...user }) => {
 
 const createUser = async ({ firstName, lastName, email, password }) => {
   const userObj = { firstName, lastName, email, password };
-  
+
   return connection()
     .then((db) => db.collection('users').insertOne(userObj))
     .then((result) => ({ id: result.insertedId, firstName, lastName, email }));
@@ -25,18 +24,31 @@ const getUsers = async () => {
 
 const getById = async (id) => {
   if (!ObjectId.isValid(id)) return null;
-  const mongoId = new ObjectId(id);
+  const userId = new ObjectId(id);
 
-  const user = await connection()
-    .then((db) => db.collection('users').findOne(mongoId));
-  
+  const user = await connection().then((db) => db.collection('users').findOne(userId));
+
   return user
-  ? formater(user)
-  : null;
-}
+    ? formater(user)
+    : null;
+};
+
+const updateUser = async (id, userData) => {
+  if (!ObjectId.isValid(id)) return null;
+  const userId = new ObjectId(id);
+
+  const updatedUser = await connection()
+    .then((db) => db.collection('users').updateOne({ _id: userId }, { $set: userData }))
+    .then((result) => result);
+
+  return updatedUser
+    ? updatedUser
+    : null;
+};
 
 module.exports = {
   createUser,
+  updateUser,
   getUsers,
   getById,
 };

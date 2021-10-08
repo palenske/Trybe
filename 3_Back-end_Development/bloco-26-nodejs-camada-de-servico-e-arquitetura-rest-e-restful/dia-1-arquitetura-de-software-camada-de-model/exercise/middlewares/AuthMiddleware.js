@@ -17,8 +17,8 @@ const validateBody = (req, _res, next) => {
   const { error } = userSchema.validate(req.body);
 
   return error
-  ? next(error)
-  : next();
+    ? next(error)
+    : next();
 };
 
 module.exports = {
