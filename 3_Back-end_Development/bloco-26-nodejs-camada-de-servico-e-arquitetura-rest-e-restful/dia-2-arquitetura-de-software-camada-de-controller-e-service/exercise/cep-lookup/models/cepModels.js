@@ -1,11 +1,11 @@
-const connection = require('./connection');
+const connection = require('../connections/mysqlConn');
 
 const findByCep = async (cep) => {
   const query = 'SELECT cep, logradouro, bairro, localidade, uf FROM ceps WHERE cep = ?';
   const result = await connection.execute(query, [cep])
     .then(([results]) => (results.length ? results[0] : null));
 
-  return result ? result : null;
+  return result;
 };
 
 const createAddress = async ({ cep, logradouro, bairro, localidade, uf }) => {
