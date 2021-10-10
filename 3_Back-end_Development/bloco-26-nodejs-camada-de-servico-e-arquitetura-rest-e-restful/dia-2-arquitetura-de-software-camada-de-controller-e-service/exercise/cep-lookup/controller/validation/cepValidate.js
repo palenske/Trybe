@@ -1,20 +1,28 @@
 const Joi = require('joi');
 
-const required = Joi.string().not().empty().required();
+const req = Joi.string().not().empty().required();
 const errorMessage = (code, message) => ({ error: { code, message } });
 
 const addressFormat = (obj) => {
   return Joi.object({
-    cep: Joi.string().regex(/\d{5}-\d{3}/).required(),
-    logradouro: required,
-    bairro: required,
-    localidade: required,
-    uf: required.length(2),
-  }).validate(obj);
+    cep: req.regex(/\d{5}-\d{3}/),
+    logradouro: req,
+    bairro: req,
+    localidade: req,
+    uf: req.length(2),
+  })
+  .messages({
+    'any.required': 'O campo {{#label}} é obrigatório',
+    'string.base': 'O campo {{#label}} tem de ser do tipo "string"',
+    'string.min': 'O campo {{#label}} tem de ter no mínimo {{#limit}} caracteres',
+    'string.max': 'O campo {{#label}} não pode ter mais do que {{#limit}} caracteres',
+    'regex.base': 'O campo {{#label}} é inválido',
+  })
+  .validate(obj);
 };
 
 const cepFormat = (cep) => {
-  return /^[0-9]{8}$/.test(cep) || /\d{5}-\d{3}/.test(cep)
+  return /^\d{5}-?\d{3}$/.test(cep)
     ? {}
     : errorMessage('invalidData', 'CEP inválido');
 };
