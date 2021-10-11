@@ -5,9 +5,9 @@ const utils = require('./utils/formatter');
 const errorMessage = (code, message) => ({ error: { code, message } });
 
 const findByCep = async (cep) => {
-  const numericCep = utils.formatToNumericCep(cep);
+  const numericCep = utils.toNumericCep(cep);
   const resultCep = await models.findByCep(numericCep);
-
+  console.log(utils.formatAddress(resultCep));
   if (resultCep) return utils.formatAddress(resultCep);
   const resultApi = await modelsApi.searchCep(numericCep);
 
@@ -18,18 +18,18 @@ const findByCep = async (cep) => {
 };
 
 const createAddress = async ({ cep, logradouro, bairro, localidade, uf }) => {
-  const numericCep = utils.formatToNumericCep(cep);
+  const numericCep = utils.toNumericCep(cep);
   const resultCep = await models.findByCep(numericCep);
 
   return resultCep
     ? errorMessage('alreadyExists', 'CEP já existente')
-    : await models.createAddress({
+    : utils.formatAddress(await models.createAddress({
       cep: numericCep,
       logradouro,
       bairro,
       localidade,
       uf
-    });
+    }));
 }
 
 module.exports = {
