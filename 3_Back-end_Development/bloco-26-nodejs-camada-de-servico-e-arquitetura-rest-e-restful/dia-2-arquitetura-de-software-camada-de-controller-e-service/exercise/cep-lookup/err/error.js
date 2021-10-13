@@ -11,7 +11,6 @@ module.exports = (err, _req, res, _next) => {
     case err.hasOwnProperty('code'):
       return res.status(statusByCode[err.code]).json(err);
     default:
-      console.log('default');
       return res.status(505)
         .json({ error: { code: 'internal', message: 'Internal server error' } });
   };
