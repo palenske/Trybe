@@ -1,54 +1,40 @@
 const express = require('express');
-const productModel = require('../models/productModel');
+const ProductModel = require('../models/productModel');
 
 const router = express.Router();
 
-router.route('/')
-  .get(async (_req, res, next) => {
-    try {
-      const products = await productModel.getAll();
-      res.status(200).json(products);
-    } catch (error) {
-      next(error)
-    };
-  })
-  .post(async (req, res, _next) => {
-    const { name, brand } = req.body;
-    try {
-      const newProduct = await productModel.add(name, brand);
-      res.status(201).json(newProduct);
-    } catch (error) {
-      res.status(500).send({ message: 'Internal Error' });
-    };
-  });
+router.get('/list-products', async (req, res, next) => {
+  const products = await ProductModel.getAll();
 
-router.route('/:id')
-  .get(async (req, res, next) => {
-    const { id } = req.params;
-    const product = await productModel.getById(id);
+  res.send(products);
+});
 
-    return product
-    ? res.status(201).json(product)
-    : res.status(404).send({ message: 'Not Found'});
-  })
-  .put(async (req, res, next) => {
-    const { id } = req.params;
-    const { name, brand } = req.body;
-    try {
-      const product = await productModel.update(id, name, brand);
-      res.status(200).json(product);
-    } catch (error) {
-      next(error);
-    }
-  })
-  .delete(async (req, res, _next) => {
-    const { id } = req.params;
-    try {
-      const product = await productModel.exclude(id);
-      res.status(200).json(product);
-    } catch (error) {
-      res.status(500).send({ message: 'Internal Error' });
-    };
-  });
+router.get('/get-by-id/:id', async (req, res, next) => {
+  const product = await ProductModel.getById(req.params.id);
+
+  res.send(product);
+});
+
+router.post('/add-user', async (req, res) => {
+  const { name, brand } = req.body;
+
+  const newProduct = await ProductModel.add(name, brand);
+
+  res.send(newProduct);
+});
+
+router.post('/delete-user/:id', async (req, res) => {
+  const products = await ProductModel.exclude(req.params.id);
+
+  res.send(products);
+});
+
+router.post('/update-user/:id', async (req, res) => {
+  const { name, brand } = req.body;
+
+  const products = await ProductModel.update(req.params.id, name, brand);
+
+  res.send(products);
+});
 
 module.exports = router;
