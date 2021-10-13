@@ -1,0 +1,27 @@
+// ping-pong
+http GET :3000/ping
+
+// Cep válido sem traço
+http GET :3000/cep/00000000
+
+
+// Cep válido com traço
+http GET :3000/cep/00000-000
+
+// Cep inválido
+http GET :3000/cep/000000-000
+
+// cria endereço válido
+http POST :3000/cep/ cep='55589-630' logradouro='test' bairro='test' localidade='test' uf='te'
+
+// faltando cep
+http POST :3000/cep/ logradouro='test' bairro='test' localidade='test' uf='te'
+
+// cep vazio
+http POST :3000/cep/ cep='' logradouro='test' bairro='test' localidade='test' uf='te'
+
+// bairro vazio
+http POST :3000/cep/ cep='55589-630' logradouro='test' bairro='' localidade='test' uf='te'
+
+// uf > 2 caracteres
+http POST :3000/cep/ cep='55589-630' logradouro='test' bairro='test' localidade='test' uf='test'

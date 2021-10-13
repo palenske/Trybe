@@ -18,4 +18,4 @@ app.use('/ping', pong);
 app.use('/cep', cepRoute);
 app.use(errorReport);
 
-app.get('/*', (req_, res) => res.status(404).json({ message: 'Not Found ):' }));
+app.get('/*', (req_, res) => res.status(404).json({ message: 'Not Found :/' }));

@@ -7,7 +7,6 @@ const errorMessage = (code, message) => ({ error: { code, message } });
 const findByCep = async (cep) => {
   const numericCep = utils.toNumericCep(cep);
   const resultCep = await models.findByCep(numericCep);
-  console.log(utils.formatAddress(resultCep));
   if (resultCep) return utils.formatAddress(resultCep);
   const resultApi = await modelsApi.searchCep(numericCep);
 

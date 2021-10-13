@@ -1,8 +1,9 @@
 const controller = require('../controller/cepController');
+const validation = require('../validation/cepValidate');
 module.exports = cepRoute = require('express').Router();
 
 cepRoute.route('/:cep')
-  .get(controller.findByCep);
+  .get(validation.validateCep, controller.findByCep);
 
 cepRoute.route('/')
-  .post(controller.createAddress);
+  .post(validation.validateAddress, controller.createAddress);
