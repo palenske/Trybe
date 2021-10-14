@@ -41,7 +41,7 @@ const add = async (name, brand) => {
     return { id: result.insertId, name, brand };
   } catch (err) {
     console.error(err);
-    return err;
+    return { error: true };
   }
 };
 
@@ -53,7 +53,7 @@ const exclude = async (id) => {
     return product;
   } catch (err) {
     console.error(err);
-    return process.exit(1);
+    return { error: true };
   }
 };
 
