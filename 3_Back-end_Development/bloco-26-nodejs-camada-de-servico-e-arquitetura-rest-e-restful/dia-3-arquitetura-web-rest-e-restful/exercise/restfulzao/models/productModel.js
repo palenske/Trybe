@@ -22,14 +22,15 @@ const getById = async (id) => {
 
 const update = async (id, name, brand) => {
   try {
-    await connection.query('UPDATE products SET name = ?, brand = ? WHERE id = ?', [name, brand, id])
+    const [result] = await connection.query('UPDATE products SET name = ?, brand = ? WHERE id = ?', [name, brand, id])
+    return result;
   } catch (err) {
     console.error(err);
     return { error: true };
   }
 };
 
-const add = async (name, brand) => {
+const create = async (name, brand) => {
   try {
     const [
       result,
@@ -48,7 +49,7 @@ const add = async (name, brand) => {
 const exclude = async (id) => {
   try {
     const product = await getById(id);
-    if (!product) return {};
+    if (!product) return null;
     await connection.query('DELETE FROM products WHERE id = ?', [id])
     return product;
   } catch (err) {
@@ -57,4 +58,4 @@ const exclude = async (id) => {
   }
 };
 
-module.exports = { add, getAll, getById, update, exclude };
+module.exports = { create, getAll, getById, update, exclude };

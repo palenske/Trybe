@@ -3,7 +3,7 @@ const service = require('../services/productService');
 const getAll = async (_req, res, next) => {
   const products = await service.getAll();
 
-  return product.error || product.code
+  return products.error || products.code
     ? next(products)
     : res.status(200).json(products);
 };
@@ -18,24 +18,26 @@ const getById = async (req, res, next) => {
 
 const update = async (req, res, next) => {
   const { name, brand } = req.body;
-  const products = await service.update(req.params.id, name, brand);
+  const product = await service.update(req.params.id, name, brand);
 
-  return product.error || product.code
-    ? next(products)
-    : res.status(200).json(products);
+  return product.error
+    ? next(product)
+    : res.status(200).json(product);
 };
 
-const create = async (req, res) => {
+const create = async (req, res, next) => {
   const { name, brand } = req.body;
-  const newProduct = await ProductModel.add(name, brand);
+  const newProduct = await service.create(name, brand);
 
-  res.status(201).json(newProduct);
+  return newProduct.error
+    ? next(newProduct)
+    : res.status(201).json(newProduct);
 };
 
 const exclude = async (req, res) => {
-  const products = await ProductModel.exclude(req.params.id);
+  const product = await service.exclude(req.params.id);
 
-  res.status(200).json(products);
+  res.status(200).json(product);
 };
 
 
