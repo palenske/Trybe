@@ -23,13 +23,13 @@ router.post('/', async (req, res) => {
   res.json(newProduct);
 });
 
-router.post('/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const products = await ProductModel.exclude(req.params.id);
 
   res.json(products);
 });
 
-router.post('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   const { name, brand } = req.body;
 
   const products = await ProductModel.update(req.params.id, name, brand);

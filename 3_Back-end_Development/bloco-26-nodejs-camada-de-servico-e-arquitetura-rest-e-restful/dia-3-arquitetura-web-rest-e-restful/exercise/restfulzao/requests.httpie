@@ -1,1 +1,12 @@
+//
 http GET :3000/products/
+
+//
+http GET :3000/products/1
+
+//
+http DELETE :3000/products/4
+
+//
+http POST :3000/products/ brand="Havaianas" name="xinela"
+
