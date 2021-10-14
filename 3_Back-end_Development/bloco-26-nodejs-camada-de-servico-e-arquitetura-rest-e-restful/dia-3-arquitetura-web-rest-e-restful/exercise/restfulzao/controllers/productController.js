@@ -1,15 +1,28 @@
-const ProductModel = require('../models/productModel');
+const service = require('../services/productService');
 
-const getAll = async (_req, res, _next) => {
-  const products = await ProductModel.getAll();
+const getAll = async (_req, res, next) => {
+  const products = await service.getAll();
 
-  res.status(200).json(products);
+  return products.error
+    ? next(products.error)
+    : res.status(200).json(products);
 };
 
-const getById = async (req, res, _next) => {
-  const product = await ProductModel.getById(req.params.id);
+const getById = async (req, res, next) => {
+  const product = await service.getById(req.params.id);
 
-  res.status(200).json(product);
+  return product.error
+    ? next(product.error)
+    : res.status(200).json(product);
+};
+
+const update = async (req, res, next) => {
+  const { name, brand } = req.body;
+  const products = await service.update(req.params.id, name, brand);
+
+  return products.error
+    ? next(products.error)
+    : res.status(200).json(products);
 };
 
 const create = async (req, res) => {
@@ -25,12 +38,6 @@ const exclude = async (req, res) => {
   res.status(200).json(products);
 };
 
-const update = async (req, res) => {
-  const { name, brand } = req.body;
-  const products = await ProductModel.update(req.params.id, name, brand);
-
-  res.status(200).json(products);
-};
 
 module.exports = {
   getAll,
