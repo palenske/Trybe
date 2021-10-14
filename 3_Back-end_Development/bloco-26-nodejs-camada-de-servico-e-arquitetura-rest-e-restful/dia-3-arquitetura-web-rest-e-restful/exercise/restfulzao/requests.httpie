@@ -1,1 +1,1 @@
-http GET :3000/products/list-products
+http GET :3000/products/
