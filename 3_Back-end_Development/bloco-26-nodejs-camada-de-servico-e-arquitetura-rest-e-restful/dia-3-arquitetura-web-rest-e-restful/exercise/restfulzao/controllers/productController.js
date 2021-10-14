@@ -3,16 +3,16 @@ const service = require('../services/productService');
 const getAll = async (_req, res, next) => {
   const products = await service.getAll();
 
-  return products.error
-    ? next(products.error)
+  return product.error || product.code
+    ? next(products)
     : res.status(200).json(products);
 };
 
 const getById = async (req, res, next) => {
   const product = await service.getById(req.params.id);
 
-  return product.error
-    ? next(product.error)
+  return product.error || product.code
+    ? next(product)
     : res.status(200).json(product);
 };
 
@@ -20,8 +20,8 @@ const update = async (req, res, next) => {
   const { name, brand } = req.body;
   const products = await service.update(req.params.id, name, brand);
 
-  return products.error
-    ? next(products.error)
+  return product.error || product.code
+    ? next(products)
     : res.status(200).json(products);
 };
 
