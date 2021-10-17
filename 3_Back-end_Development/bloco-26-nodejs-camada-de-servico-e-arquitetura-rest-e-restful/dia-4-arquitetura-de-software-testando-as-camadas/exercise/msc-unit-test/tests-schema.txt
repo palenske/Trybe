@@ -1,0 +1,21 @@
+└── controllers
+│   └── movieController.js
+└── models
+│   └── connection.js
+│   └── movieModel.js
+└── services
+│   └── movieService.js
+└── tests
+│   ├── controllers
+│   │   └── movieControllerCreate.test.js
+│   │   └── movieControllerGetAll.test.js
+│   │   └── movieControllerGetById.test.js
+│   └── models
+│   │   └── movieModelCreate.test.js
+│   │   └── movieModelGetAll.test.js
+│   │   └── movieModelGetById.test.js
+│   ├── services
+│   │   └── movieServiceCreate.test.js
+│   │   └── movieServiceGetAll.test.js
+│   │   └── movieServiceGetById.test.js
+└── index.js
