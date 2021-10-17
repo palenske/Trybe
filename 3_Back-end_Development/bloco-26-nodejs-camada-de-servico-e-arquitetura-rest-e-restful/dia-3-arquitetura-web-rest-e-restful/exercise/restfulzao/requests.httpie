@@ -2,11 +2,14 @@
 http GET :3000/products/
 
 //
-http GET :3000/products/1
+http GET :3000/products/8
 
 //
-http DELETE :3000/products/4
+http DELETE :3000/products/8
 
 //
 http POST :3000/products/ brand="Havaianas" name="xinela"
+
+//
+http PUT :3000/products/5 brand="Água" name="mineral"
 
