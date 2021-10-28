@@ -6,24 +6,15 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongoConnection = require('../../models/connection');
 const MoviesModel = require('../../models/movieModel');
 
-describe('Insere um novo filme no BD', () => {
+describe('Busca todos os filmes', () => {
+  let connectionMock; 
   const DBServer = new MongoMemoryServer();
-  let connectionMock;
-  
-  const payloadMovie = {
-    title: 'Example Movie',
-    directedBy: 'Jane Dow',
-    releaseYear: 1999,
-  };
   
   before(async () => {
-    
-    const URLMock = await DBServer.getUri();
-    
-    connectionMock = await MongoClient
-    .connect(URLMock, {
+    const URLMock = await DBServer.getUri();  
+    connectionMock = await MongoClient.connect(URLMock, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     })
     .then((conn) => conn.db('model_example'));
     
@@ -32,26 +23,67 @@ describe('Insere um novo filme no BD', () => {
   
   after(() => {
     mongoConnection.getConnection.restore();
+  })
+  
+  
+  describe('Quando não existe nenhum filme criado', () => {
+    it('retorna uma array', async () => {
+      const movies = await MoviesModel.getAll();
+      
+      expect(movies).to.be.an('array');
+    });
+    
+    it('a array está vazia', async () => {
+      const movies = await MoviesModel.getAll();
+      
+      expect(movies).to.be.empty;
+    });
   });
   
-  describe('quando é inserido com sucesso', () => {
+  describe('Quando existem filmes cadastrados', () => {
+    const expectedMovie = {
+      id: '604cb554311d68f491ba5781',
+      title: 'Example Movie',
+      directedBy: 'Jane Dow',
+      releaseYear: 1999,
+    };  
     
-    it('retorna um objeto', async () => {
-      const response = await MoviesModel.create(payloadMovie);
-      
-      expect(response).to.be.a('object');
+    before(async () => {
+      await connectionMock.collection('movies').insertOne({ ...expectedMovie });
+    }); 
+    
+    after(async () => {
+      await connectionMock.collection('movies').drop();
     });
     
-    it('tal objeto possui o "id" do novo filme inserido', async () => {
-      const response = await MoviesModel.create(payloadMovie);
+    it('retorna uma array', async () => {
+      const movies = await MoviesModel.getAll();
       
-      expect(response).to.have.a.property('id');
+      expect(movies).to.be.an('array');
     });
     
-    it('deve existir um filme com o título cadastrado!', async () => {
-      await MoviesModel.create(payloadMovie);
-      const movieCreated = await connectionMock.collection('movies').findOne({ title: payloadMovie.title });
-      expect(movieCreated).to.be.not.null;
+    it('a array não está vazia!', async () => {
+      const movies = await MoviesModel.getAll();
+      
+      expect(movies).to.be.not.empty;
+    });
+    
+    it('a array possui dados do tipo objeto', async () => {
+      const [ item ] = await MoviesModel.getAll();
+      
+      expect(item).to.be.an('object');
+    });
+    
+    it('tais itens possuem os atributos "id", "title", "directedBy", "releaseYear"', async () => {
+      const [ item ] = await MoviesModel.getAll();
+      
+      expect(item).to.include.all.keys(['id', 'title', 'directedBy', 'releaseYear']);
+    }); 
+    
+    it('o filme cadastrado está na lista', async () => {
+      const [ { id, title, directedBy, releaseYear } ] = await MoviesModel.getAll();
+      
+      expect({ id, title, directedBy, releaseYear }).to.deep.equal(expectedMovie);
     });
   });
 });
