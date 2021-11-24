@@ -1,0 +1,35 @@
+.main-box {
+  align-items: center;
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.login-box {
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 7px 7px 12px 0 rgba(50, 50, 50, 0.75);
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.login-header h1 {
+  color: #20db99;
+  font-size: 40px;
+  margin-top: 0;
+}
+
+.login-box input {
+  margin: 5px;
+  max-width: 180px;
+}
+
+.login-box button {
+  margin: 5px;
+  width: 100px;
+}
