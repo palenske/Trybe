@@ -1,0 +1,1 @@
+Alguns dos projetos realizados na trybe [...]
