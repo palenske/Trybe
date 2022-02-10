@@ -1,4 +1,4 @@
-def list_average(numbers):
-  print(sum(numbers) / len(numbers))
+def average(numbers):
+  return sum(numbers) / len(numbers)
 
-# list_average([70, 75, 80, 90])
+# print(average([70, 75, 80, 90]))
