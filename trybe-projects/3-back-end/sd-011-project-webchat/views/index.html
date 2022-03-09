@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web-Chat</title>
+  <style>
+    /* CSS copiado do plantão do John */
+    /* https://github.com/tryber/sd-011-live-lectures/pull/74/commits/29428919865747b8214923989c6e162aa4b7cdcc/ index.html */
+    body {
+      margin: 0;
+      padding-bottom: 3rem;
+      display: flex;
+      flex-direction: row;
+    }
+
+    #send-message {
+      background: rgba(0, 0, 0, 0.15);
+      padding: 0.25rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      height: 3rem;
+      box-sizing: border-box;
+      backdrop-filter: blur(10px);
+    }
+
+    #new-message {
+      border: none;
+      padding: 0 1rem;
+      flex-grow: 1;
+      border-radius: 2rem;
+      margin: 0.25rem;
+    }
+
+    #new-message:focus {
+      outline: none;
+    }
+
+    #send-message>button {
+      background: #333;
+      border: none;
+      padding: 0 1rem;
+      margin: 0.25rem;
+      border-radius: 3px;
+      outline: none;
+      color: #fff;
+    }
+
+    #messages {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #messages>li {
+      padding: 0.5rem 1rem;
+    }
+
+    #messages>li:nth-child(odd) {
+      background: #efefef;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <form id="change-nick">
+      <input
+        data-testid="nickname-box"
+        id="new-nick"
+        type="text"
+        placeholder="Insira seu nickname"
+      >
+      <button data-testid="nickname-button">Salvar</button>
+    </form>
+    <div>
+      <ul id="online-users"></ul>
+    </div>
+  </section>
+  <section>
+    <div>
+      <ul id="messages"></ul>
+    </div>
+  </section>
+  <form id="send-message">
+    <input
+      data-testid="message-box"
+      id="new-message"
+      type="text"
+      placeholder="Digite uma nova mensagem aqui"
+    >
+    <button data-testid="send-button">Enviar</button>
+  </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    const onlineUsers = document.querySelector('#online-users');
+    const messages = document.querySelector('#messages');
+    const sendMessage = document.querySelector('#send-message');
+    const newMessage = document.querySelector('#new-message');
+    const changeNick = document.querySelector('#change-nick');
+    const nickname = document.querySelector('#new-nick');
+
+    sendMessage.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (newMessage.value) {
+        socket.emit('message', { chatMessage: newMessage.value });
+        newMessage.value = '';
+      };
+    });
+
+    changeNick.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (nickname.value) {
+        socket.emit('changeNick', nickname.value);
+        nickname.value = '';
+      };
+    })
+
+    socket.on('users', (users) => {
+      document.querySelector('#online-users').innerHTML = '';
+      const currentUser = users[socket.id];
+
+      Object.values(users).forEach((user) => {
+        const userName = document.createElement('li');
+        userName.setAttribute('data-testid', 'online-user');
+        userName.textContent = user;
+        return currentUser === user
+          ? onlineUsers.prepend(userName)
+          : onlineUsers.appendChild(userName);
+      });
+    });
+
+    socket.on('message', (msg) => {
+      const newMessage = document.createElement('li');
+      newMessage.setAttribute('data-testid', 'message');
+      newMessage.innerText = msg;
+      messages.appendChild(newMessage);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    socket.on('messageHistory', (msgs) => {
+      msgs.forEach(({ message, timestamps, nickname }) => {
+        const msgList = document.createElement('li');
+        msgList.setAttribute('data-testid', 'message');
+        msgList.innerText = `${timestamps} ${nickname}: ${message}`;
+        messages.appendChild(msgList);
+      });
+    });
+  </script>
+</body>
+
+</html>
