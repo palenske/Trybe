@@ -9,9 +9,7 @@ const error = require('../err/errors');
 const app = express();
 app.use(bodyParser.json());
 
-// Não remover esse end-point, ele é necessário para o avaliador
 app.get('/', (_request, response) => response.send());
-// Não remover esse end-point, ele é necessário para o avaliador
 
 app.use('/users', usersRoutes);
 app.use('/login', loginRoutes);
