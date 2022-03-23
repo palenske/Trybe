@@ -1,6 +1,5 @@
-[x] - Exercício 1: Crie um algoritmo não recursivo para contar quantos números pares existem em uma sequência numérica (1 a n).
-
-[x] - Exercício 2: Transforme o algoritmo criado acima em recursivo.
-[x] - Exercício 3: Crie um algoritmo recursivo que encontre, em uma lista, o maior número inteiro.
-[x] - Exercício 4: Escreva um algoritmo recursivo para encontrar o máximo divisor comum ( mdc ) de dois inteiros.
-[x] - Exercício 5: Escreva um algoritmo recursivo que identifica se um número é primo.
+- [x] - Exercício 1: Crie um algoritmo não recursivo para contar quantos números pares existem em uma sequência numérica (1 a n).
+- [x] - Exercício 2: Transforme o algoritmo criado acima em recursivo.
+- [x] - Exercício 3: Crie um algoritmo recursivo que encontre, em uma lista, o maior número inteiro.
+- [x] - Exercício 4: Escreva um algoritmo recursivo para encontrar o máximo divisor comum ( mdc ) de dois inteiros.
+- [ ] - Exercício 5: Escreva um algoritmo recursivo que identifica se um número é primo.
