@@ -3,6 +3,7 @@ from stopwatch import Cronometro
 
 
 def bubble_sort(array):
+# complexidade O(n²) - pois possui 2 laços de repetição em cima de um input mutável;
     count = 0
     has_swapped = True
 
@@ -34,6 +35,7 @@ def merge(left, right):
 
 
 def merge_sort(array):
+# complexidade O(n log n) - divide o input mutável independente do tamanho;
     if len(array) <= 1:
         return array
 
