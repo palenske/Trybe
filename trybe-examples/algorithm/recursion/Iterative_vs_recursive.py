@@ -22,3 +22,17 @@ def fibonacci(num):  # nome da função e parâmetro
     else:
         # chamada de si mesma com um novo valor
         return fibonacci(num - 2) + fibonacci(num - 1)
+
+# recursive bubble
+
+
+def bubble_sort(array):
+    count = 0
+    for index in range(len(array) - 1):
+        if array[index] > array[index + 1]:
+            array[index], array[index + 1] = array[index + 1], array[index]
+            count += 1
+    if count == 0:
+        return array
+    else:
+        return bubble_sort(array)
