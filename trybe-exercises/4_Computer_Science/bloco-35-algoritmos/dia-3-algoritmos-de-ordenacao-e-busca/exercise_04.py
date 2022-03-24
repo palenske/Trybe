@@ -4,14 +4,17 @@ from stopwatch import Cronometro
 
 def bubble_sort(array):
     count = 0
-    for index in range(len(array) - 1):
-        if array[index] > array[index + 1]:
-            array[index], array[index + 1] = array[index + 1], array[index]
-            count += 1
-    if count == 0:
-        return array
-    else:
-        return bubble_sort(array)
+    has_swapped = True
+
+    while has_swapped:
+        has_swapped = False
+
+        for index in range(len(array) - count - 1):
+            if array[index] > array[index + 1]:
+                array[index], array[index + 1] = array[index + 1], array[index]
+                has_swapped = True
+        count += 1
+    return array
 
 
 def merge(left, right):
