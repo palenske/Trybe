@@ -1,5 +1,5 @@
 - [x] Exercício 1 Dado um array com os seguintes elementos ["zebra", "macaco", "elefante", "arara", "javali"] , após duas iterações utilizando bubble sort , como estaria este array?
-- [ ] Exercício 2 Demonstre o passo a passo, do processo de mistura, de um array sendo ordenado, utilizando merge sort . Comece o passo a passo a partir da linha abaixo:
+- [x] Exercício 2 Demonstre o passo a passo, do processo de mistura, de um array sendo ordenado, utilizando merge sort . Comece o passo a passo a partir da linha abaixo:
 - [ ] Exercício 3 Execute os algoritmos de ordenação por seleção e inserção, para as entradas de dados ordenadas, inversamente ordenadas e aleatórias, em seguida, compare-os. Faça testes para entradas de tamanho 10.000, 100.000, 1.000.000.
 - [ ] Exercício 4 Compare o tempo de execução do algoritmo merge_sort e bubble_sort para uma entrada de 10.000 valores aleatórios. Explique através de análise de complexidade o que ocorre.
 - [ ] Exercício 5 Converta o algoritmo recursivo de busca binária em iterativo.
