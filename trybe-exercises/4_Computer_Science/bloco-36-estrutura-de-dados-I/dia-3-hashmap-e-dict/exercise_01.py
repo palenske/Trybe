@@ -1,36 +1,29 @@
-def facebook(words, chars):
+def formed_words(words, chars):
     char_lib = {}
-    match_words = []
+    total_chars = 0
 
     for char in chars:
-        if char not in char_lib:
-            char_lib[char] = 1
-        else:
-            char_lib[char] += 1
+        char_lib[char] = 1 if char not in char_lib else char_lib[char] + 1
 
     for word in words:
-        word_lib = {}
-        have_chars = []
+        word_lib, have_chars = {}, []
 
         for char in word:
-            if char not in word_lib:
-                word_lib[char] = 1
-            else:
-                word_lib[char] += 1
+            if char not in char_lib:
+                break
+            word_lib[char] = 1 if char not in word_lib else word_lib[char] + 1
 
-        for key, value in word_lib.items():
-            if not key in char_lib or char_lib[key] < value:
+            if word_lib[char] > char_lib[char]:
                 have_chars.clear()
                 break
             else:
-                have_chars.append(key)
+                have_chars.append(char)
+
         if len(have_chars) > 0:
-            match_words.append(''.join(have_chars))
+            total_chars += len(word)
+            print(word)
 
-    return (
-        [print(f'{word}, {len(word)}') for word in match_words],
-        print(f'total: {len("".join(match_words))}')
-    )
+    return print(f'total de letras: {total_chars}')
 
 
-facebook(["cat", "bt", "hat", "tree"], "atach")
+formed_words(["hello", "world", "students"], "welldonehoneyr")
