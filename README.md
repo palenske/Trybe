@@ -12,6 +12,7 @@ O curso é composto por 4 módulos principais, divididos em blocos com conteúdo
   - Introdução à JavaScript ES6 e Testes Unitários
   - Higher Order Functions do JavaScript ES6
   - JavaScript e Testes Assíncronos
+  - [Projetos](/trybe-projects/1-fundaments)
 
 ## [Desenvolvimento Front-end](/trybe-exercises/2_Front-end_Development)
   - Introdução à React
@@ -21,6 +22,7 @@ O curso é composto por 4 módulos principais, divididos em blocos com conteúdo
   - Testes automatizados com React Testing Library
   - Gerenciamento de estado com Redux
   - Context API e React Hooks
+  - [Projetos](/trybe-projects/2-front-end)
 
 ## [Desenvolvimento Back-end](/trybe-exercises/3_Back-end_Development)
   - Introdução à SQL
@@ -35,6 +37,7 @@ O curso é composto por 4 módulos principais, divididos em blocos com conteúdo
   - Deployment
   - Arquitetura: SOLID e ORM
   - Sockets
+  - [Projetos](/trybe-projects/3-back-end)
 
 ## [Ciência da Computação](/trybe-exercises/4_Computer_Science)
   - Introdução à Python
@@ -43,3 +46,4 @@ O curso é composto por 4 módulos principais, divididos em blocos com conteúdo
   - Algoritmos
   - Estrutura de Dados I: Arrays, Hashmaps e Sets
   - Estrutura de Dados II: Listas, Filas e Pilhas
+  - [Projetos](/trybe-projects/4-computer-science)
