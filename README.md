@@ -1,6 +1,6 @@
 # [Trybe](https://github.com/betrybe)
 Repositório dedicado à jornada na Trybe.
-O curso é composto por 4 módulos principais, divididos em blocos com conteúdos, exercícios e um projeto avaliativo.
+O curso é composto por 4 módulos principais, divididos em blocos com conteúdos, exercícios e um projeto avaliativo ao final de cada bloco.
 
 ## [Fundamentos do Desenvolvimento Web](/trybe-exercises/1_Fundamentals_of_Web_Development/)
   - Unix & Bash
