@@ -26,7 +26,7 @@
     - React Hooks - useState e useContext
     - React Hooks - useEffect e Hooks customizados
 
-## Projetos
+## [Projetos](/trybe-projects/2-front-end)
 
 - Projeto - [Movie Cards Library](https://github.com/tryber/sd-09-project-movie-cards-library/tree/palenske-movie-cards-library)
 
