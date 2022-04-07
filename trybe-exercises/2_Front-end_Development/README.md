@@ -1,12 +1,30 @@
-# Conteúdo e competências
-
-- Utilizar a biblioteca React para criar aplicações de front-end que se conectam com APIs
-- React
-- Componentes com Estado, Eventos e Formulários com React
-- Ciclo de Vida de Componentes e React Router
-- RTL
-- Redux
-- Context API e React Hooks 
+### Introdução à React
+    - Introdução - Front-end
+    - Introdução - React
+    - 'Hello, world!' no React!
+    - Componentes React
+### Componentes com Estado, Eventos e Formulários com React
+    - Componentes com estado e eventos
+    - Formulários no React
+### Ciclo de Vida de Componentes e React Router
+    - Ciclo de vida de componentes
+    - React Router
+### Metodologias Ágeis
+    - Metodologias Ágeis
+### Testes automatizados com React Testing Library
+    - RTL - Primeiros passos
+    - RTL - Mocks e Inputs
+    - RTL - Testando React Router
+### Gerenciamento de estado com Redux
+    - Introdução ao Redux - O estado global da aplicação
+    - Usando o Redux no React
+    - Usando o Redux no React - Prática
+    - Usando o Redux no React - Actions Assíncronas
+    - Testes em React-Redux
+### Context API e React Hooks
+    - Context API do React
+    - React Hooks - useState e useContext
+    - React Hooks - useEffect e Hooks customizados
 
 ## Projetos
 
