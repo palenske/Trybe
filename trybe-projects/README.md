@@ -9,4 +9,4 @@ Atuam como forma de avaliar o nosso conhecimento enquanto aluno, separados por r
 - [x] [Desenvolvimento Back-End](https://github.com/palenske/Trybe/tree/main/trybe-projects/3-back-end)
 - [ ] Ciência da Computação
 
-Escolhi alguns dos projetos de cada módulo para mostrar a vocês, foram desenvolvidos muito mais projetos além dos que estão nesse repositório 😄
+Escolhi alguns dos projetos de cada módulo para mostrar aqui, foram desenvolvidos muito mais projetos além dos que estão nesse repositório 😄
