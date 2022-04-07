@@ -27,6 +27,7 @@
     - React Hooks - useEffect e Hooks customizados
 
 ## [Projetos](/trybe-projects/2-front-end)
+> Esse repositório ficou meio vazio por conta de um imprevisto em minha rotina, então deixarei os links de meus projetos desse módulo.
 
 - Projeto - [Movie Cards Library](https://github.com/tryber/sd-09-project-movie-cards-library/tree/palenske-movie-cards-library)
 
