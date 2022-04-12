@@ -5,6 +5,9 @@ class LinkedList:
 
     def __init__(self):
         self.head_value = None
+        self.tail_value = None
+        self.head_value.next = self.tail_value
+        self.tail_value.next = self.head_value
         self.__length = 0
 
     def __str__(self):
